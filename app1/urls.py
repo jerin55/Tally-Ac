@@ -18,7 +18,9 @@ urlpatterns = [
     path('receivabl',views.receivabl,name='receivabl'),
     path('payabl',views.payabl,name='payabl'),
     path('creategroup',views.creategroup,name='creategroup'),
-    path('create_group',views.create_group,name='create_group')
+    path('create_group',views.create_group,name='create_group'),
+    path('grcreate',views.grcreate,name='grcreate'),
+    path('createledger',views.createledger,name='createledger')
 
 
 

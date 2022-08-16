@@ -40,8 +40,14 @@ class payable(models.Model):
     due_date=models.DateField()
     overdue=models.IntegerField(null=True)
 
+    def total(self):
+      tot=sum(self.pending_amound)
+      return tot
+
     def __str__(self):
       return self.party_name  
+
+
 
 class GroupModel(models.Model):
     name = models.CharField(max_length=225)

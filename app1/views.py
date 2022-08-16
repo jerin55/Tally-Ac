@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.http import JsonResponse
+from django.shortcuts import redirect
 
 
 # Create your views here.
@@ -53,16 +54,6 @@ def create_group(request):
     if request.method == 'POST':
         gname = request.POST['gname']
         alia = request.POST['alia']
-        if len(gname) <= 0:
-            return JsonResponse({
-                'status': 00
-            })
-
-        if len(alia) <= 0:
-            alia = None
-        else:
-            pass
-
         under = request.POST['und']
         gp = request.POST['subled']
         nett = request.POST['nee']
@@ -79,10 +70,14 @@ def create_group(request):
             method_to_allocate_usd_purchase=meth,
         )
         mdl.save()
-        # return redirect('index_view')
-        return JsonResponse({
-            'status': 1
-        })    
+        return redirect('/')
+        
+
+def grcreate(request):
+    return render(request,'grcreate.html')    
+
+def createledger(request):
+    return render (request,'createledger.html')        
 
 
 

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<style>
+    .close {
+        position: absolute;
+        top: 3px;
+        right: 8px;
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        transform: rotate(45deg);
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .flexy{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .fo:hover{
+        background: rgb(49, 104, 187);
+        
+    }
+
+
+
+</style>
+
+
+
+<div class="row container-fluid p-0 mx-0">
+    <div class="col-sm-3 m-0 p-0"></div>
+    <div class="col-sm-6 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
+        <a href="javascript:history.go(-1);" class="close">+</a>
+    <h6 style="" class="bg-info text-light p-2">List Of Groups</h6>
+    
+
+<form id="myForm" action="{% url 'create_group' %}" method="post" class="">
+    {% csrf_token %}
+   
+                   
+
+                    <div class="fo  col-sm-13 m-0 p-0 w-200 py-4"f ><a id="cbtn" href="creategroup"  style="padding-left: 6px; margin-left: 600px;" class="">Create</a></div>
+
+                    <hr>
+
+                    <div class=" fo  col-sm-13 m-0 p-0 w-200 py-4" ><a id="cbtn" href="" style="padding-left: 6px"  class="">Creditors</a></div>
+                    <div class=" fo  col-sm-13 m-0 p-0 w-200 py-4" ><a id="cbtn" href="" style="padding-left: 6px"  class="">Debtors</a></div> 
+                 
+              
+
+    
+</form>
+
+</div>
+</div>
+<div class="col-sm-3  m-0 p-0"></div>
+
+</div> 
+
+
+
+
+{% endblock body %}

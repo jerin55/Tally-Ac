@@ -20,7 +20,10 @@ urlpatterns = [
     path('creategroup',views.creategroup,name='creategroup'),
     path('create_group',views.create_group,name='create_group'),
     path('grcreate',views.grcreate,name='grcreate'),
-    path('createledger',views.createledger,name='createledger')
+    path('createledger',views.createledger,name='createledger'),
+    path('credit',views.credit,name='credit'),
+    path('debit',views.debit,name='debit')
+
 
 
 

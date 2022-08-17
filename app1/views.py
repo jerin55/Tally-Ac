@@ -1,3 +1,4 @@
+from unittest import TextTestRunner
 from django.shortcuts import render
 from .models import *
 from django.http import JsonResponse
@@ -47,14 +48,17 @@ def payabl(request):
     return render(request,'payable.html',{'pay':pay})   
 
 def creategroup(request):
-    return render (request,'creategroup.html')     
+    under=grunder.objects.all()
+    context={'under':under}
+    return render (request,'creategroup.html',context)     
 
 
 def create_group(request):
     if request.method == 'POST':
         gname = request.POST['gname']
         alia = request.POST['alia']
-        under = request.POST['und']
+        
+        under = request.POST['under']
         gp = request.POST['subled']
         nett = request.POST['nee']
         calc = request.POST['cal']
@@ -78,6 +82,12 @@ def grcreate(request):
 
 def createledger(request):
     return render (request,'createledger.html')        
+
+def credit(request):
+    return render(request,'credit.html')
+
+def debit(request):
+    return render(request,'debit.html')        
 
 
 

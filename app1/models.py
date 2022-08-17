@@ -47,6 +47,12 @@ class payable(models.Model):
     def __str__(self):
       return self.party_name  
 
+class grunder(models.Model):
+  und=models.CharField(max_length=255)  
+
+  def __str__(self):
+      return self.und    
+
 
 
 class GroupModel(models.Model):

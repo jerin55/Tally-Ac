@@ -32,7 +32,7 @@
     <div class="col-sm-3 m-0 p-0"></div>
     <div class="col-sm-6 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
       <!-- <a href="javascript:history.go(-1);" class="close">+</a>--> 
-    <h6  class="bg-info text-light p-2">List Of Groups</h6>
+    <h6  class="bg-info text-light p-2">List Of Ledgers</h6>
     
 
 <form id="myForm" action="" method="post" class="">
@@ -40,12 +40,15 @@
    
                    
 
-                    <div class="fo  col-sm-13 m-0 p-0 w-200 py-4"   ><a id="cbtn" href="creategroup"  style="padding-left: 6px; margin-left: 600px;" class="">Create</a></div>
+                    <div class="fo  col-sm-13 m-0 p-0 w-200 py-4"   ><a id="cbtn" href="createledger"  style="padding-left: 6px; margin-left: 600px;" class="">Create</a></div>
 
                     <hr>
+                    {% for ledg in ledg %}
 
-                    <div class=" fo  col-sm-13 m-0 p-0 w-200 py-4" style="height:5px;" ><a id="cbtn" href="credit" style="padding-left: 6px"  class="">Creditors</a></div>
-                    <div class=" fo  col-sm-13 m-0 p-0 w-200 py-4" style="height:5px;" ><a id="cbtn" href="debit" style="padding-left: 6px"  class="">Debtors</a></div> 
+                    <div class=" fo  col-sm-13 m-0 p-0 w-200 py-4" style="height:5px;" ><a id="cbtn" href="credit" style="padding-left: 6px"  class="">{{ ledg.lname }}</a></div>
+
+                    {% endfor %}
+                   
                  
               
 

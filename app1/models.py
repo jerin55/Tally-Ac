@@ -1,3 +1,4 @@
+from re import T
 from django.db import models
 
 # Create your models here.
@@ -66,3 +67,31 @@ class GroupModel(models.Model):
 
     def _str_(self):
         return self.name      
+
+
+
+class ledgercreation(models.Model):
+  lname=models.CharField(max_length=255,null=True)
+  alias=models.CharField(max_length=255,null=True)
+  under=models.CharField(max_length=255)
+  prbankdetals=models.CharField(max_length=255,)
+  holders_name=models.CharField(max_length=255,null=True)
+  ac_no=models.IntegerField(null=True) 
+  ifsc=models.IntegerField(null=True)
+  swiftcode=models.IntegerField(null=True)
+  bankname=models.CharField(max_length=255,null=True) 
+  branch=models.CharField(max_length=255,null=True)
+  checkbook=models.CharField(max_length=255,null=True)
+  checkprinting=models.CharField(max_length=255,null=True) 
+  mailname=models.CharField(max_length=255,null=True)
+  mailaddress=models.CharField(max_length=255,null=True)
+  mailcontry=models.CharField(max_length=255,null=True)
+  mailstate=models.CharField(max_length=255,null=True)
+  mailpin=models.IntegerField(null=True)
+  pan=models.IntegerField(null=True)
+  regtype=models.CharField(max_length=255,null=True)
+  gst=models.IntegerField(null=True)
+  gstdetails=models.CharField(max_length=255,null=True)
+
+  
+

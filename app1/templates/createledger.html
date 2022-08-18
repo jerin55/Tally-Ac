@@ -18,9 +18,10 @@
                 align-items: center;
                 justify-content: center;
                 border: none;
-                width:70%;
+                width:100%;
                 position: absolute;
             }
+            
             form{
             
                 width: 100%;
@@ -29,7 +30,7 @@
                 align-items: center;
                 justify-content: center; */
                 height:auto;
-                background-color: rgba(0, 0, 0, 0.4);
+                background-color: rgba(0,0,0,0.0);
             }
     
             input,select,textarea{
@@ -41,7 +42,7 @@
             }
             .top input{
                 padding: 10px 20px;
-                width: 50%;
+                width: 90%;
                 border: none;
                 background-color: rgba(255, 255, 255, 0.4);
     
@@ -68,27 +69,29 @@
                 display: flex; 
             }
             .top .left1{
-                width: 66.6667%;
+                width:33.333%;
                
                 border-bottom: 1px solid rgba(128, 128, 128, 0.6);
                 display: flex;
                 flex-direction: column;
                 
                 padding: 30px;
+                
     
             }
             .top .right1{
-                width: 33.333%;
+                width: 20%;
                 display: flex;
                 flex-direction: column;
                 align-items:center;
                 background-color: rgba(128, 128, 128, 0.09);
-                border-bottom: 1px solid rgba(128, 128, 128, 0.6);
-                padding: 30px;
+                
+                padding: 25px;
+                
                 
             }
             .left1 div{
-                width: 50%;
+                width: 100%;
                 
                 padding: 3px 0;
             }
@@ -97,21 +100,34 @@
                 display: flex;
             }
             .bottom .left2{
-                width: 33.33%;
+                width: 33.333%;
                 padding: 30px;
-                border-right: 1px solid rgba(128, 128, 128, 0.6);
+                
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+               
             }
+            .bottom .right3{
+                width: 30%;
+                padding: 30px;
+                
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+            }
+            
             .bottom .right2{
                 width: 33.333%;
                 padding: 30px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                border-right: 1px solid rgba(128, 128, 128, 0.6);
+                justify-content: center;
+                
+                
                 
                 
             }
@@ -121,6 +137,9 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
+                
+                
                 
                 
             }
@@ -128,18 +147,14 @@
                 width: 100%;
                 padding: 3px 0;
             }
-            .bottom .left2,.bottom .right2,.bottom .center{
-                border-bottom: 1px solid rgba(128, 128, 128, 0.6);
-    
-            }
+            
     p{
         font-size: 13px;
     }
-    .enter{
+    .flexy{
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 20px 0;
     }
     .close {
         position: absolute;
@@ -155,36 +170,45 @@
     .close:hover{
         color: yellow;
     }
+       .hidden{
+        display: none;
+          }
+       .show{
+        display: block;
+           }
     
    
         </style>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-
-<div class="row container-fluid p-0 mx-0" >
-    <div class="col-sm-3 m-0 p-0"></div>
-    <div class="col-sm-6 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
-        <a href="javascript:history.go(-1);" class="close">+</a>
+        
+<div class="row container-fluid p-0 mx-0 "  >
+    <div class="col-sm-2 m-0 p-0"></div>
+    <div class="col-sm-8 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
+<!--        <a href="javascript:history.go(-1);" class="close">+</a> -->
     <h6  class="bg-info text-light p-2">Ledger Creation</h6>
+    <div class="container">
 
-<form action="" method="post">
+<form class="" action="{% url 'ledgercreations' %}" method="post" >
+    {% csrf_token %}
+    
     <div class="top">
-        <div class="left1">
-        <div><p>Name</p></div>
-        <input type="text">
-        <div><p>(Alias)</p></div>
-        <input type="text">
+        <div class="left1 form-group">
+        <label >Name</label>
+        <input type="text" class="form-control" id="sname" name="lname">
+        <label>Alias</label>
+        <input type="text" class="form-control" name="alias">
         
     </div>
-   
-    
-</div>
-<div class="bottom">
-    <div class="right2">
-        <div><p>Under</p></div>
-        <select  name="under" id="under">
+
+    <div class="left1 form-group" >
+        <label>Under</label>
+        <fieldset>
+        <select class="under form-control"   name="under" id="under">
+            <option value="yes"></option>
             
             <option  value="Bank Account">Bank Accouts</option>
-            <option value="Bank OCC A/c">Bank OCC A/c</option>
+            
             <option value="Bank OD A/c">Bank OD A/c</option>
             <option value="Bank_Account">Branch Divisions</option>
             <option value="Bank_Account">Capital Amount</option>
@@ -217,16 +241,60 @@
             <option value="Bank_Account">Unsecured Loans</option>   
         
         </select>
+    </fieldset>
 
     </div>
-    <div class="left2">
+   
+    
+</div>
+<div class="bottom ">
+   
+<div class=" right2 " >
+    <div class="hidden" id="pDetails">
+
+    <fieldset class="container form-group" >
+        <h4>Bank Details</h4>
+        <label>A/C holders name</label>
+        <input type="text" name="holders_name" class="form-control">
+        <label>A/c No</label>
+        <input type="number" name="ac_no" class="form-control">
+        <label>Ifsc code</label>
+        <input type="number" name="ifsc" class="form-control">
+        <label>swiftcode</label>
+        <input type="number" name="swiftcode" class="form-control">
+        <label>Bank Name</label>
+        <input type="text" name="bankname" class="form-control">
+        <label>Branch</label>
+        <input type="text" name="branch" class="form-control">
+        <h4 style="margin:20px 0 10px ;">Bank Configuration</h4>
+        <label>Set /Alter range for check Books</label>
+        <select name="checkbook" id="" class="form-control">
+            <option value="No">No</option> 
+            <option value="Yes">Yes</option>
+             
+        </select>
+        <label>Enable check printing</label>
+        <select name="checkprinting" id="" class="form-control">
+            <option value="No">No</option> 
+            <option value="Yes">Yes</option>
+             
+        </select>
+        
+        
+    </fieldset>
+
+</div></div>
+
+
+
+    <div class="left2 form-group">
         <h4>Mailing Details</h4>
-        <div><p>Name</p></div>
-        <input type="text">
-        <div><p>Address</p></div>
-        <textarea row="5"></textarea>
-        <div><p>Country</p></div>
-        <select name="country">
+        <label>Name</label>
+        <input type="text" name="mailname" class="form-control">
+        <label>Address</label>
+        <textarea row="5" name="mailaddress" class="form-control"></textarea>
+        <label>Country</label>
+        <select name="mailcontry" id="mailcontry" class="form-control">
             <option value="">Select Country</option>
             <option value="['Nigeria','NG']">Nigeria</option>
             <option value="['Afghanistan','AF']">Afghanistan</option>
@@ -477,29 +545,35 @@
             <option value="['Zambia','ZM']">Zambia</option>
             <option value="['Zimbabwe','ZW']">Zimbabwe</option>
             </select>
-            <div><p>State</p></div>
-        <input type="text" name="state">
-        <div><p>Pincode</p></div>
-        <input type="text" name="state">
+            <label>State</label>
+        <input type="text" name="mailstate" class="form-control">
+        <label>Pincode</label>
+        <input type="number" name="mailpin" class="form-control">
 
 
  
 
     </div>
     
-    <div class="center">
-        <h4>Banking Details</h4>
-        <div><p>Provide Bank Details</p></div>
-        <select name="bankyn" id="bankyn">
+    <div class="center container form-group " >
+        
+        <h4 >Banking Details</h4>
+        <label>Provide Bank Details</label>
+        <select name="prbankdetals" id="prbankdetals" class="form-control">
             <option value="No">No</option> 
             <option value="Yes">Yes</option>
              
         </select>
-        <h4 style="margin:20px 0 10px ;">Tax Registration Details</h4>
-        <div><p>PAN/IT No.</p></div>
-        <input type="text" name="pan">
-        <div><p>Registration Type</p></div>
-        <select name="regtype" id="regtype">
+   
+
+    
+        
+
+        <h4 style="margin:20px 0 10px ;"  class="" >Tax Registration Details</h4>
+        <label>PAN/IT No.</label>
+        <input type="number" name="pan" class="form-control">
+        <label>Registration Type</label>
+        <select name="regtype" id="regtype" class="form-control">
             <option value="No">Regular</option> 
             <option value="Yes">Composition</option>
             <option value="Yes">Consumer</option>
@@ -507,20 +581,45 @@
             <option value="Yes">Unknown</option>
              
         </select>
-        <div><p>GSTIN/UN</p></div>
-        <input type="text" name="gstin">
-        <div><p>Set/Alter GST details</p></div>
-        <input type="text" name="setgst">
+        <label>GSTIN/UN</label>
+        <input type="text" name="gst" class="form-control">
+        <label>Set/Alter GST details</label>
+        <input type="text" name="gstdetails" class="form-control">
+
+    </div>
  
 
     </div>
+    <div class="enter flexy"><button>CREATE</button></div>  
 
     
     
 </div>
         
-<div class="enter"><button>CREATE</button></div>        
+      
 
     </form>
-    </div>
+</div>
+</div>
+</div>
+
+    <script>
+        $('.under').change(function(){
+            var responseID = $(this).val();
+            if(responseID =="Bank Account"){
+                $('#pDetails').removeClass("hidden");
+                $('#pDetails').addClass("show");
+           }else{
+                $('#pDetails').removeClass("show");
+                $('#pDetails').addClass("hidden");
+            }
+           
+        });
+
+       
+    </script>
+ 
+    
+
+   
     {% endblock %}

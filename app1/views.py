@@ -1,3 +1,4 @@
+from tabnanny import check
 from unittest import TextTestRunner
 from django.shortcuts import render
 from .models import *
@@ -87,7 +88,111 @@ def credit(request):
     return render(request,'credit.html')
 
 def debit(request):
-    return render(request,'debit.html')        
+    return render(request,'debit.html')    
+
+def ledgerlist(request):
+    ledg=ledgercreation.objects.all()
+    return render(request,'ledgerlist.html',{'ledg':ledg})    
+
+
+
+def ledgercreations(request):
+    if request.method == 'POST':
+        
+        lname=request.POST['lname']
+        alias=request.POST['alias']
+        under=request.POST['under']
+        prbankdetals=request.POST['prbankdetals']
+        holders_name=request.POST['holders_name']
+
+        ac_no=request.POST['ac_no']
+        if ac_no=="":
+            ac_no=None
+
+        ifsc=request.POST['ifsc']
+        if ifsc=="":
+            ifsc=None
+
+        swiftcode=request.POST['swiftcode']
+        if swiftcode=="":
+            swiftcode=None
+
+        bankname=request.POST['bankname']
+        branch=request.POST['branch']
+        checkbook=request.POST['checkbook']
+        checkprinting=request.POST['checkprinting']
+        mailname=request.POST['mailname']
+        mailaddress=request.POST['mailaddress']
+        mailcontry=request.POST['mailcontry']
+        mailstate=request.POST['mailstate']
+
+        mailpin=request.POST['mailpin']
+        if mailpin=="":
+            mailpin=None
+
+        pan=request.POST['pan']
+        if pan=="":
+            pan=None
+
+        gst=request.POST['gst']
+        if gst=="":
+            gst=None
+
+        gstdetails=request.POST['gstdetails']
+
+        led=ledgercreation(
+            lname=lname,
+            alias=alias,
+            under=under,
+            prbankdetals=prbankdetals,
+            holders_name=holders_name,
+            ac_no=ac_no,
+            ifsc=ifsc,
+            swiftcode=swiftcode,
+            bankname=bankname,
+            branch=branch,
+            checkbook=checkbook,
+            checkprinting=checkprinting,
+            mailname=mailname,
+            mailaddress=mailaddress,
+            mailcontry=mailcontry,
+            mailstate=mailstate,
+            mailpin=mailpin,
+            pan=pan,
+            gst=gst,
+            gstdetails=gstdetails
+        )
+        led.save()
+        return redirect('ledgerlist')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -18,15 +18,24 @@
         justify-content: center;
     }
 
+    .hidden{
+        display: none;
+          }
+
+    .show{
+        display: block;
+           }
+
 
 
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
 
 <div class="row container-fluid p-0 mx-0">
-    <div class="col-sm-1 m-0 p-0"></div>
-    <div class="col-sm-10 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
+    <div class="col-sm-3 m-0 p-0"></div>
+    <div class="col-sm-6 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
    <!--     <a href="javascript:history.go(-1);" class="close">+</a> -->
     <h6  class="bg-info text-light p-2">Group Creation</h6>
     
@@ -44,14 +53,16 @@
                         <div class="col-sm-8  p-0"><input type="text" id="alia" name="alia" class="form-control" placeholder=""></div> 
                     </div>
 
-                    <div class="row container-fluid  p-2 m-0">
+                    <div class="row container-fluid   p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="under">Under :</label></div>
-                        <div class="col-sm-8 m-0 p-0">
-                            <select id="under" name="under" class="form-control ">   
-                                <option value="primary" selected>*Primary</option>
+                        <div class="col-sm-8 m-0 p-0 form-group" >
+                            <fieldset>
+                            <select id="under" name="under" class="form-control "> 
+                                <option value="yes" selected></option>  
+                                <option value="primary" >*Primary</option>
 
                               
-                                <option >Bank Accounds</option>
+                                <option value="Bank Accounds" >Bank Accounds</option>
 
                               
                 <option value="Bank OCC A/c" >Bank OCC A/c</option>
@@ -90,6 +101,7 @@
                                 
                                
                             </select>
+                        </fieldset>
                         
                             
                            
@@ -97,6 +109,22 @@
 
                         </div> 
                     </div>
+
+                <div class="hidden form-group" id="pDetail">
+                <fieldset class="container ">
+                    <div class="row container-fluid  p-2 m-0">
+                        <div class="col-sm-4 m-0 p-0"> <label for="subled">Nature of group</label></div>
+                        <div class="col-sm-8 m-0 p-0">
+                            <select id="namegroup" name="namegroup" class=" form-control">
+                                <option value="Accept">Accept</option>
+                                <option value="Expenses" selected>Expenses</option>
+                                <option value="Income">Income</option>
+                                <option value="Liabilities">Liabilities</option>
+                            </select>
+                        </div> 
+                    </div>
+                </fieldset>
+                </div>
                     
 
                             
@@ -156,13 +184,33 @@
     
 </form>
 
+
+
 </div>
 </div>
-<div class="col-sm-3  m-0 p-0"></div>
+<script>
+    $('select').change(function(){
+        var responseID = $(this).val();
+        if(responseID =="primary"){
+            $('#pDetail').removeClass("hidden");
+            $('#pDetail').addClass("show");
+       }else{
+            $('#pDetail').removeClass("show");
+            $('#pDetail').addClass("hidden");
+        }
+       
+    });
 
-</div> 
+
+
+</script>
 
 
 
 
-{% endblock body %}
+
+
+
+
+
+{% endblock  %}

@@ -60,6 +60,7 @@ def create_group(request):
         alia = request.POST['alia']
         
         under = request.POST['under']
+        namegroup=request.POST['namegroup']
         gp = request.POST['subled']
         nett = request.POST['nee']
         calc = request.POST['cal']
@@ -69,6 +70,7 @@ def create_group(request):
             name=gname,
             alias=alia,
             under=under,
+            namegroup=namegroup,
             gp_behaves_like_sub_ledger=gp,
             nett_debit_credit_bal_reporting=nett,
             used_for_calculation=calc,
@@ -79,16 +81,19 @@ def create_group(request):
         
 
 def grcreate(request):
-    return render(request,'grcreate.html')    
+    gr=GroupModel.objects.all()
+    return render(request,'grcreate.html',{'gr':gr})    
 
 def createledger(request):
     return render (request,'createledger.html')        
 
 def credit(request):
-    return render(request,'credit.html')
+    cre=cred.objects.all()
+    return render(request,'credit.html',{'cre':cre})
 
-def debit(request):
-    return render(request,'debit.html')    
+def debi(request):
+    debi=debit.objects.all()
+    return render(request,'debit.html',{'debi':debi})    
 
 def ledgerlist(request):
     ledg=ledgercreation.objects.all()

@@ -10,4 +10,6 @@ admin.site.register(receivable),
 admin.site.register(payable),
 admin.site.register(payitems),
 admin.site.register(grunder),
-admin.site.register(GroupModel)
+admin.site.register(GroupModel),
+admin.site.register(debit),
+admin.site.register(cred)

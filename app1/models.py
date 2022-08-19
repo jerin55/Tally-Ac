@@ -60,6 +60,7 @@ class GroupModel(models.Model):
     name = models.CharField(max_length=225)
     alias = models.CharField(max_length=225,null=True)
     under = models.CharField(max_length=225)
+    namegroup=models.CharField(max_length=255,null=True)
     gp_behaves_like_sub_ledger = models.BooleanField(default=False)
     nett_debit_credit_bal_reporting = models.BooleanField(default=False)
     used_for_calculation = models.BooleanField(default=False)
@@ -92,6 +93,28 @@ class ledgercreation(models.Model):
   regtype=models.CharField(max_length=255,null=True)
   gst=models.IntegerField(null=True)
   gstdetails=models.CharField(max_length=255,null=True)
+
+
+class debit(models.Model):
+  name=models.CharField(max_length=255) 
+  credit=models.IntegerField()
+  debit=models.IntegerField()
+
+  def _str_(self):
+        return self.name 
+
+
+
+class cred(models.Model):
+  name=models.CharField(max_length=255) 
+  credit=models.IntegerField()
+  debit=models.IntegerField()
+
+  def _str_(self):
+        return self.name 
+
+
+
 
   
 

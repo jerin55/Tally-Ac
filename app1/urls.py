@@ -22,7 +22,7 @@ urlpatterns = [
     path('grcreate',views.grcreate,name='grcreate'),
     path('createledger',views.createledger,name='createledger'),
     path('credit',views.credit,name='credit'),
-    path('debit',views.debit,name='debit'),
+    path('debi',views.debi,name='debi'),
     path('ledgercreations',views.ledgercreations,name='ledgercreations'),
     path('ledgerlist',views.ledgerlist,name='ledgerlist')
 

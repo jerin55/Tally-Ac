@@ -1,9 +1,12 @@
+
 from tabnanny import check
 from unittest import TextTestRunner
 from django.shortcuts import render
 from .models import *
 from django.http import JsonResponse
 from django.shortcuts import redirect
+from django.contrib import messages
+
 
 
 # Create your views here.
@@ -49,9 +52,8 @@ def payabl(request):
     return render(request,'payable.html',{'pay':pay})   
 
 def creategroup(request):
-    under=grunder.objects.all()
-    context={'under':under}
-    return render (request,'creategroup.html',context)     
+    grp=GroupModel.objects.all()
+    return render (request,'creategroup.html',{'grp':grp})     
 
 
 def create_group(request):
@@ -85,7 +87,8 @@ def grcreate(request):
     return render(request,'grcreate.html',{'gr':gr})    
 
 def createledger(request):
-    return render (request,'createledger.html')        
+    grp=GroupModel.objects.all()
+    return render (request,'createledger.html',{'grp':grp})        
 
 def credit(request):
     cre=cred.objects.all()
@@ -105,6 +108,7 @@ def ledgercreations(request):
     if request.method == 'POST':
         
         lname=request.POST['lname']
+
         alias=request.POST['alias']
         under=request.POST['under']
         prbankdetals=request.POST['prbankdetals']

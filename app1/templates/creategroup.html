@@ -95,11 +95,16 @@
                 <option value="Bank_Account">Sundry Creditors</option>
                 <option value="Bank_Account">Sundry Debtors</option>
                 <option value="Bank_Account">Suspence A/c</option>
-                <option value="Bank_Account">Unsecured Loans</option>   
+                <option value="Bank_Account">Unsecured Loans</option> 
+                
+                {% for grp in grp %}
+
+                <option>{{ grp.name }}</option>
+                {% endfor %}
+
+
               
-                                
-                                
-                               
+                            
                             </select>
                         </fieldset>
                         

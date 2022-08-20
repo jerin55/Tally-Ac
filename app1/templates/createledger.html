@@ -188,14 +188,15 @@
 <!--        <a href="javascript:history.go(-1);" class="close">+</a> -->
     <h6  class="bg-info text-light p-2">Ledger Creation</h6>
     <div class="container">
+        
 
-<form class="" action="{% url 'ledgercreations' %}" method="post" >
+<form class="" autocomplete="off" action="{% url 'ledgercreations' %}" method="post" >
     {% csrf_token %}
     
     <div class="top">
         <div class="left1 form-group">
         <label >Name</label>
-        <input type="text" class="form-control" id="sname" name="lname">
+        <input type="text" class="form-control"  id="sname" name="lname" required>
         <label>Alias</label>
         <input type="text" class="form-control" name="alias">
         
@@ -205,7 +206,8 @@
         <label>Under</label>
         <fieldset>
         <select class="under form-control"   name="under" id="under">
-            <option value="yes"></option>
+            
+            <option  value="yes"></option>
             
             <option  value="Bank Account">Bank Accouts</option>
             
@@ -239,12 +241,20 @@
             <option value="Bank_Account">Sundry Debtors</option>
             <option value="Bank_Account">Suspence A/c</option>
             <option value="Bank_Account">Unsecured Loans</option>   
+            {% for grp in grp %}
+
+            <option value="">{{ grp.name }}</option>
+
+            {% endfor %}
+     
         
         </select>
     </fieldset>
 
     </div>
+
    
+  
     
 </div>
 <div class="bottom ">

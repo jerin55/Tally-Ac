@@ -176,6 +176,42 @@
        .show{
         display: block;
            }
+            .hi{
+                display: none;
+            }
+            .od{
+                display: none;
+            }
+            .assets{
+                display: none;
+            }
+            .gst{
+                display: none;
+            }
+            .bo{
+                display: none;
+            }
+            .goo{
+                display: none;
+            }
+            .ser{
+                display: none;
+            }
+            .dirx{
+                display: none;
+            }
+            .stdet{
+                display: none;
+            }
+            .appli{
+                display: none;
+            }
+            .notapp{
+                display: none;
+            }
+            .gd{
+                display: none;
+            }
     
    
         </style>
@@ -186,7 +222,7 @@
     <div class="col-sm-2 m-0 p-0"></div>
     <div class="col-sm-8 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
 <!--        <a href="javascript:history.go(-1);" class="close">+</a> -->
-    <h6  class="bg-info text-light p-2">Ledger Creation</h6>
+    <h6  class="bg-info text-light p-2">Ledger Creation (secondary)</h6>
     <div class="container">
         
 
@@ -200,25 +236,25 @@
         <label>Alias</label>
         <input type="text" class="form-control" name="alias">
         
-    </div>
+    </div></div>
 
-    <div class="left1 form-group" >
+    <div class="right2 form-group" style="padding-left: 40px;" >
         <label>Under</label>
         <fieldset>
-        <select class="under form-control"   name="under" id="under">
+        <select class="under form-control"   name="under" id="under" style="width: 150px; ">
             
             <option  value="yes"></option>
             
             <option  value="Bank Account">Bank Accouts</option>
-            
+            <option  value="Bank OCC A/c">Bank OCC A/c </option>
             <option value="Bank OD A/c">Bank OD A/c</option>
             <option value="Bank_Account">Branch Divisions</option>
             <option value="Bank_Account">Capital Amount</option>
             <option value="Bank_Account">Cash in Hand</option>
-            <option value="Bank_Account">Current Assets</option>
+            <option value="Current Assets">Current Assets</option>
             <option value="Bank_Account">Current Liabilities</option>
             <option value="Bank_Account">Deposits (Asset)</option>
-            <option value="Bank_Account">Direct Expenses</option>
+            <option value="Direct Expenses">Direct Expenses</option>
             <option value="Bank_Account">Direct Incomes</option>
             <option value="Bank_Account">Duties and Taxes</option>
             <option value="Bank_Account">Expenses(Direct)</option>
@@ -261,9 +297,8 @@
    
 <div class=" right2 " >
     <div class="hidden" id="pDetails">
-
-    <fieldset class="container form-group" >
-        <h4>Bank Details</h4>
+        <div>
+        <h4>Bank Account Details</h4>
         <label>A/C holders name</label>
         <input type="text" name="holders_name" class="form-control">
         <label>A/c No</label>
@@ -291,9 +326,183 @@
         </select>
         
         
-    </fieldset>
+   
 
 </div></div>
+
+
+
+    <div class="hi" id="pDetail">
+
+        <label style="padding-left: 25px;padding-bottom: 8px;">(Loans(Liability))</label> <br>
+
+        <label >Set OD limit :</label>  
+        <input type="number" name="" class="form-control"> 
+        <h4>Bank Account Details</h4>
+        <label>A/C holders name</label>
+        <input type="text" name="holders_name" class="form-control">
+        <label>A/c No</label>
+        <input type="number" name="ac_no"  class="form-control">
+        <label>Ifsc code</label>
+        <input type="number" name="ifsc" class="form-control">
+        <label>swiftcode</label>
+        <input type="number" name="swiftcode" class="form-control">
+        <label>Bank Name</label>
+        <input type="text" name="bankname" class="form-control">
+        <label>Branch</label>
+        <input type="text" name="branch" class="form-control">
+        <h4 style="margin:20px 0 10px ;">Bank Configuration</h4>
+        <label>Set /Alter range for check Books</label>
+        <select name="checkbook" id="" class="form-control">
+            <option value="No">No</option> 
+            <option value="Yes">Yes</option>
+             
+        </select>
+        <label>Enable check printing</label>
+        <select name="checkprinting" id="" class="form-control">
+            <option value="No">No</option> 
+            <option value="Yes">Yes</option>
+             
+        </select>
+    </div>
+
+
+
+
+    <div class="od" id="odac">
+
+        <label style="padding-left: 25px;padding-bottom: 8px;">(Loans(Liability))</label> <br>
+        <label >Set OD limit :</label>  
+        <input type="number" name="" class="form-control"> 
+        <h4>Bank Account Details</h4>
+        <label>A/C holders name</label>
+        <input type="text" name="holders_name" class="form-control">
+        <label>A/c No</label>
+        <input type="number" name="ac_no"  class="form-control">
+        <label>Ifsc code</label>
+        <input type="number" name="ifsc" class="form-control">
+        <label>swiftcode</label>
+        <input type="number" name="swiftcode" class="form-control">
+        <label>Bank Name</label>
+        <input type="text" name="bankname" class="form-control">
+        <label>Branch</label>
+        <input type="text" name="branch" class="form-control">
+        <h4 style="margin:20px 0 10px ;">Bank Configuration</h4>
+        <label>Set /Alter range for check Books</label>
+        <select name="checkbook" id="" class="form-control">
+            <option value="No">No</option> 
+            <option value="Yes">Yes</option>
+             
+        </select>
+        <label>Enable check printing</label>
+        <select name="checkprinting" id="" class="form-control">
+            <option value="No">No</option> 
+            <option value="Yes">Yes</option>
+             
+        </select>
+    </div>
+
+    <div class="assets" id="ass">
+
+        <h4>Statutory Details</h4>
+        <label>Include in assessable value calculation for :</label>
+        <fieldset>
+        <select class="ast" name="ast" id="ast">
+            <option >Not Applicable</option>
+            <option value="GST">GST</option>
+        </select>
+    </fieldset>
+
+        <div class="gst" id="gst1" >
+            <label>Appropriate to method if calculation :</label>
+            <fieldset>
+            <select class="appr" id="appr" name="appr" >
+                <option value="both">Both</option>
+                <option value="goods">Goods</option>
+                <option value="service">Service</option>
+            </select>
+        </fieldset>
+
+        </div>
+
+        <div class="bo" id="bo1">
+            <label>method of calculation : &nbsp; Based on value </label>
+            
+        </div>
+        <div class="goo" id="goo1">
+            <label>Method of calculation</label>
+            <select>
+                <option>Based on value </option>
+                <option>Based on quantity </option>
+            </select>
+
+        </div>
+        
+        <div class="ser" id="ser1">
+            <label>method of calculation : &nbsp; Based on value </label>
+            
+        </div>
+
+    </div>
+
+
+    <div class="dirx" id="dirx1">
+
+            <label>Type of ledgers :</label>
+            <select class="tled"  name="tled" id="tled">
+                <option value="Not Applicable">Not Applicable</option>
+                <option>Discount</option>
+                <option>Invoice Rounding</option>
+            </select>
+
+            
+        <div class="stdet" id="stdet1">
+            <h3>Statuary Details</h3>
+            <label>Is GST Applicable :</label>
+            <select class="gstapp" name="gstapp" id="gstapp">
+                <option value="Applicable">Applicable </option>
+                <option value="Not applicable">Not applicable </option>
+                <option>Undefined</option>
+            </select>
+        </div>
+
+        <div class="appli" id="appli1">
+            <label>Set/Alter GST Details :</label>
+            <select>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+            <label>Types of Supply :</label>
+            <select>
+                <option>Goods</option>
+                <option>Services</option>
+            </select>
+        </div>
+        <div class="notapp" id="notapp1">
+            <label>include in assessable value calculation for :</label>
+            <select class="gsttt" id="gsttt" name="gsttt">
+                <option>Not Applicable </option>
+                <option value="gstt">GST</option>
+            </select>
+
+        </div>
+        <div class="gd" id="gd1">
+            <label>Appropriate To :</label>
+            <select>
+                <option>Both</option>
+                <option>Goods</option>
+                <option>Services</option>
+            </select>
+
+        </div>
+
+          
+
+    </div>
+        
+        
+    
+</div>
 
 
 
@@ -627,8 +836,128 @@
                 $('#pDetails').removeClass("show");
                 $('#pDetails').addClass("hidden");
             }
-           
+            if(responseID =="Bank OD A/c"){
+                $('#pDetail').removeClass("hi");
+                $('#pDetail').addClass("show");
+           }else{
+                $('#pDetail').removeClass("show");
+                $('#pDetail').addClass("hi");
+            }
+            if(responseID =="Bank OCC A/c"){
+                $('#odac').removeClass("od");
+                $('#odac').addClass("show");
+           }else{
+                $('#odac').removeClass("show");
+                $('#odac').addClass("od");
+            }
+            if(responseID =="Current Assets"){
+                $('#ass').removeClass("assets");
+                $('#ass').addClass("show");
+           }else{
+                $('#ass').removeClass("show");
+                $('#ass').addClass("assets");
+            }
+            if(responseID =="Direct Expenses"){
+                $('#dirx1').removeClass("dirx");
+                $('#dirx1').addClass("show");
+           }else{
+                $('#dirx1').removeClass("show");
+                $('#dirx1').addClass("dirx");
+            }
+            
+            
         });
+
+        $('.ast').change(function(){
+            var responseID = $(this).val();
+            if(responseID == "GST"){
+                $('#gst1').removeClass("gst");
+                $('#gst1').addClass("show");
+            }
+            else{
+                $('#gst1').removeClass("show");
+                $('#gst1').addClass("gst");
+            }
+
+        })
+
+
+        $('.appr').change(function(){
+            var responseID = $(this).val();
+            if(responseID == "both"){
+                $('#bo1').removeClass("bo");
+                $('#bo1').addClass("show");
+            }
+            else{
+                $('#bo1').removeClass("show");
+                $('#bo1').addClass("bo");
+            }
+            if(responseID == "goods"){
+                $('#goo1').removeClass("goo");
+                $('#goo1').addClass("show");
+            }
+            else{
+                $('#goo1').removeClass("show");
+                $('#goo1').addClass("goo");
+            }
+            if(responseID == "service"){
+                $('#ser1').removeClass("ser");
+                $('#ser1').addClass("show");
+            }
+            else{
+                $('#ser1').removeClass("show");
+                $('#ser1').addClass("ser");
+            }
+
+        })
+
+        $('.tled').change(function(){
+            var responseID = $(this).val();
+            if(responseID == "Not Applicable"){
+                $('#stdet1').removeClass("stdet");
+                $('#stdet1').addClass("show");
+            }
+            else{
+                $('#stdet1').removeClass("show");
+                $('#stdet1').addClass("stdet");
+            }
+
+        })
+
+        $('.gstapp').change(function(){
+            var responseID = $(this).val();
+            if (responseID == "Applicable"){
+                $('#appli1').removeClass("appli");
+                $('#appli1').addClass("show");
+            }
+            else{
+                $('#appli1').removeClass("show");
+                $('#appli1').addClass("appli")
+            }    
+            if (responseID == "Not applicable"){
+                $('#notapp1').removeClass("notapp");
+                $('#notapp1').addClass("show");
+            }
+            else{
+                $('#notapp1').removeClass("show");
+                $('#notapp1').addClass("notapp")
+            }    
+
+            
+        })
+        $('.gsttt').change(function(){
+            var responseID = $(this).val();
+            if (responseID == "gstt"){
+                $('#gd1').removeClass("gd");
+                $('#gd1').addClass("show");
+            }
+            else{
+                $('#gd1').removeClass("show");
+                $('#gd1').addClass("gd")
+            }    
+
+
+        })
 
     </script>
 

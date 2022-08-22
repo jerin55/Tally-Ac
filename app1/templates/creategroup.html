@@ -25,6 +25,8 @@
     .show{
         display: block;
            }
+          
+           
 
 
 
@@ -33,11 +35,11 @@
 
 
 
-<div class="row container-fluid p-0 mx-0">
-    <div class="col-sm-3 m-0 p-0"></div>
-    <div class="col-sm-6 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
+<div class="row container-fluid p-0 mx-0" >
+    <div class="col-sm-3 m-0  p-0"></div>
+    <div class="col-sm-6 m-0 p-0" style=" width: 100%; background-color:rgba(0,0,0,0.2);" >
    <!--     <a href="javascript:history.go(-1);" class="close">+</a> -->
-    <h6  class="bg-info text-light p-2">Group Creation</h6>
+    <h6  class="bg-info text-light  p-2">Group Creation (secondary)</h6>
     
 
 <form id="myForm" action="{% url 'create_group' %}" method="post" class="">
@@ -45,7 +47,7 @@
    
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4  p-0"> <label for="gname">Name :</label></div>
-                        <div class="col-sm-8  p-0"><input type="text" id="gname" onfocus="this.value=''" name="gname" class="form-control" placeholder=""></div> 
+                        <div class="col-sm-8  p-0"><input type="text" id="gname" onfocus="this.value=''"  name="gname" class="form-control" placeholder=""></div> 
                     </div>
 
                     <div class="row container-fluid  p-2 m-0">
@@ -118,7 +120,7 @@
                 <div class="hidden form-group" id="pDetail">
                 <fieldset class="container ">
                     <div class="row container-fluid  p-2 m-0">
-                        <div class="col-sm-4 m-0 p-0"> <label for="subled">Nature of group</label></div>
+                        <div class="col-sm-4 m-0 p-0"> <label for="subled">Nature of group :</label></div>
                         <div class="col-sm-8 m-0 p-0">
                             <select id="namegroup" name="namegroup" class=" form-control">
                                 <option value="Accept">Accept</option>
@@ -130,6 +132,8 @@
                     </div>
                 </fieldset>
                 </div>
+
+                
                     
 
                             

@@ -212,8 +212,57 @@
             .gd{
                 display: none;
             }
-    
-   
+            .und{
+                display: none;
+            }
+            .inv{
+                display: none;
+            }
+            .dirn{
+                display: none;
+            }
+            .stdetn{
+                display: none;
+            }
+            .invc{
+                display: none;
+            }
+            .applii{
+                display: none;
+            }
+            .notappp{
+                display: none;
+            }
+            .undd{
+                display: none;
+            }
+            .gdd{
+                display: none;
+            }
+            .dut{
+                display: none;
+            }
+            .dutt{
+                display: none;
+            }
+            .ctx{
+                display: none;
+            }
+            .rm{
+                display: none;
+            }
+            .rmmm{
+                display: none;
+            }
+            .rrm{
+                display: none;
+            }
+            .gsgt{
+                display: none;
+            }
+            .oth{
+                display: none;
+            }
         </style>
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -241,7 +290,7 @@
     <div class="right2 form-group" style="padding-left: 40px;" >
         <label>Under</label>
         <fieldset>
-        <select class="under form-control"   name="under" id="under" style="width: 150px; ">
+        <select class="under form-control"   name="under" id="under" style="width: 170px; ">
             
             <option  value="yes"></option>
             
@@ -255,8 +304,8 @@
             <option value="Bank_Account">Current Liabilities</option>
             <option value="Bank_Account">Deposits (Asset)</option>
             <option value="Direct Expenses">Direct Expenses</option>
-            <option value="Bank_Account">Direct Incomes</option>
-            <option value="Bank_Account">Duties and Taxes</option>
+            <option value="Direct Incomes">Direct Incomes</option>
+            <option value="Duties and Taxes">Duties and Taxes</option>
             <option value="Bank_Account">Expenses(Direct)</option>
             <option value="Bank_Account">Expenses(Indirect)</option>
             <option value="Bank_Account">Fixed Assets</option>
@@ -452,8 +501,20 @@
             <select class="tled"  name="tled" id="tled">
                 <option value="Not Applicable">Not Applicable</option>
                 <option>Discount</option>
-                <option>Invoice Rounding</option>
+                <option value="Invoice Rounding">Invoice Rounding</option>
             </select>
+
+            <div class="inv" id="inv1">
+                <label>Rounding Method</label>
+                <select>
+                    <option>Downward rounding</option>
+                    <option>Normal rounding</option>
+                    <option>Upward rounding</option>
+                </select>
+                <label>Rounding limit :</label>
+                <input type="number">
+
+            </div>
 
             
         <div class="stdet" id="stdet1">
@@ -462,7 +523,7 @@
             <select class="gstapp" name="gstapp" id="gstapp">
                 <option value="Applicable">Applicable </option>
                 <option value="Not applicable">Not applicable </option>
-                <option>Undefined</option>
+                <option value="undefined">Undefined</option>
             </select>
         </div>
 
@@ -496,9 +557,170 @@
 
         </div>
 
+        <div class="und" id="und1">
+            <label>Types of supply :</label>
+            <select>
+                <option>Goods</option>
+                <option>Services</option>
+            </select>
+
+        </div>
+
           
 
     </div>
+
+
+    <div class="dirn" id="dirn1">
+
+        <label>Type of ledgers :</label>
+        <select class="tled"  name="tledn" id="tled">
+            <option value="Not Applicables">Not Applicable</option>
+            <option>Discount</option>
+            <option value="Invoice Roundings">Invoice Rounding</option>
+        </select>
+
+        <div class="invc" id="invc1">
+            <label>Rounding Method</label>
+            <select>
+                <option>Downward rounding</option>
+                <option>Normal rounding</option>
+                <option>Upward rounding</option>
+            </select>
+            <label>Rounding limit :</label>
+            <input type="number">
+
+        </div>
+
+        
+    <div class="stdetn" id="stdetn1">
+        <h3>Statuary Details</h3>
+        <label>Is GST Applicable :</label>
+        <select class="gstapp" name="gstapp" id="gstapp">
+            <option value="Applicablee">Applicable </option>
+            <option value="Not applicablee">Not applicable </option>
+            <option value="undefinedd">Undefined</option>
+        </select>
+    </div>
+
+    <div class="applii" id="applii1">
+        <label>Set/Alter GST Details :</label>
+        <select>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+        <label>Types of Supply :</label>
+        <select>
+            <option>Goods</option>
+            <option>Services</option>
+        </select>
+    </div>
+    <div class="notappp" id="notappp1">
+        <label>include in assessable value calculation for :</label>
+        <select class="gsttt" id="gsttt" name="gsttt">
+            <option>Not Applicable </option>
+            <option value="gstttt">GST</option>
+        </select>
+
+    </div>
+    <div class="gdd" id="gdd1">
+        <label>Appropriate To :</label>
+        <select>
+            <option>Both</option>
+            <option>Goods</option>
+            <option>Services</option>
+        </select>
+
+    </div>
+
+    <div class="undd" id="undd1">
+        <label>Types of supply :</label>
+        <select>
+            <option>Goods</option>
+            <option>Services</option>
+        </select>
+
+    </div>
+
+      
+
+</div>
+
+
+
+<div class="dut" id="dut1">
+    <label>Type of duty/tax</label>
+    <select class="dugs" id="dugs1" name="dugs">
+        <option value="ggst">GST</option>
+        <option value="others">others</option>
+    </select>
+
+    <div class="dutt" id="dut2">
+        <label> Tax Type : </label>
+        <select class="txty" id="txty1">
+            <option value="Central Tax">Central Tax</option>
+            <option>Cess</option>
+            <option>Integrated Tax</option>
+            <option>State Tax</option>
+        </select>
+
+    </div>
+
+    <div class="ctx" id="ctx1">
+
+        <label>Persentage of calculation :</label>
+        <input type="number">
+        <label>Rounding Method :</label>
+        <select class="rmm" id="rmm1">
+            <option>Not Applicable </option>
+            <option value="Downward Roundings">Downward Rounding</option>
+            <option value="Normal Roundings">Normal Rounding</option>
+            <option value="Upward Roundings">Upward Rounding</option>
+        </select>
+
+        <div class="rm" id="rm1">
+            <label>Rounding Limit :</label>
+            <input type="number">
+
+        </div>
+        <div class="rmmm" id="rm2">
+            <label>Rounding Limit :</label>
+            <input type="number">
+
+        </div>
+        <div class="rrm" id="rrm1">
+            <label>Rounding Limit :</label>
+            <input type="number">
+
+        </div>
+
+    </div>
+
+    <div class="oth" id="oth1">
+        <label>Persentage of calculation :</label>
+        <input type="number">
+        <h4>Statuary Details</h4>
+        <label>Include in assessable value calculation for :</label>
+        <select class="stst">
+            <option>Not Applicable</option>
+            <option value="gs">GST</option>
+        </select>
+
+        <div class="gsgt" id="gsgt1">
+            <label>Apprpriate to method of calculation :</label>
+            <select>
+                <option>Both</option>
+                <option>Good</option>
+                <option>Service</option>
+            </select>
+        </div>
+
+    </div>
+
+
+
+</div>
+
         
         
     
@@ -864,6 +1086,20 @@
                 $('#dirx1').removeClass("show");
                 $('#dirx1').addClass("dirx");
             }
+            if(responseID =="Direct Incomes"){
+                $('#dirn1').removeClass("dirn");
+                $('#dirn1').addClass("show");
+           }else{
+                $('#dirn1').removeClass("show");
+                $('#dirn1').addClass("dirn");
+            }
+            if(responseID =="Duties and Taxes"){
+                $('#dut1').removeClass("dut");
+                $('#dut1').addClass("show");
+           }else{
+                $('#dut1').removeClass("show");
+                $('#dut1').addClass("dut");
+            }
             
             
         });
@@ -921,6 +1157,30 @@
                 $('#stdet1').removeClass("show");
                 $('#stdet1').addClass("stdet");
             }
+            if(responseID == "Invoice Rounding"){
+                $('#inv1').removeClass("inv");
+                $('#inv1').addClass("show");
+            }
+            else{
+                $('#inv1').removeClass("show");
+                $('#inv1').addClass("inv");
+            }
+            if(responseID == "Not Applicables"){
+                $('#stdetn1').removeClass("stdetn");
+                $('#stdetn1').addClass("show");
+            }
+            else{
+                $('#stdetn1').removeClass("show");
+                $('#stdetn1').addClass("stdetn");
+            }
+            if(responseID == "Invoice Roundings"){
+                $('#invc1').removeClass("invc");
+                $('#invc1').addClass("show");
+            }
+            else{
+                $('#invc1').removeClass("show");
+                $('#invc1').addClass("invc");
+            }
 
         })
 
@@ -942,6 +1202,32 @@
                 $('#notapp1').removeClass("show");
                 $('#notapp1').addClass("notapp")
             }    
+            if (responseID == "undefined"){
+                $('#und1').removeClass("und");
+                $('#und1').addClass("show");
+            }
+            else{
+                $('#und1').removeClass("show");
+                $('#und1').addClass("und")
+            }  
+            if (responseID == "Applicablee"){
+                $('#applii1').removeClass("applii");
+                $('#applii1').addClass("show");
+            }
+            else{
+                $('#applii1').removeClass("show");
+                $('#applii1').addClass("applii")
+            }     
+            if (responseID == "Not applicablee"){
+                $('#notappp1').removeClass("notappp");
+                $('#notappp1').addClass("show");
+            }
+            else{
+                $('#notappp1').removeClass("show");
+                $('#notappp1').addClass("notappp")
+            }     
+            
+
 
             
         })
@@ -954,11 +1240,100 @@
             else{
                 $('#gd1').removeClass("show");
                 $('#gd1').addClass("gd")
-            }    
+            }  
+            if (responseID == "gstttt"){
+                $('#gdd1').removeClass("gdd");
+                $('#gdd1').addClass("show");
+            }
+            else{
+                $('#gdd1').removeClass("show");
+                $('#gdd1').addClass("gdd")
+            }  
+            
+
+        })
+
+        $('.dugs').change(function(){
+            var responseID = $(this).val();
+            if (responseID == "ggst"){
+                $('#dut2').removeClass("dutt");
+                $('#dut2').addClass("show");
+            }
+            else{
+                $('#dut2').removeClass("show");
+                $('#dut2').addClass("dutt")
+            }  
+            if (responseID == "others"){
+                $('#oth1').removeClass("oth");
+                $('#oth1').addClass("show");
+            }
+            else{
+                $('#oth1').removeClass("show");
+                $('#oth1').addClass("oth")
+            }  
+
+        })
+
+        $('.txty').change(function(){
+            var responseID = $(this).val();
+            if (responseID == "Central Tax"){
+                $('#ctx1').removeClass("ctx");
+                $('#ctx1').addClass("show");
+            }
+            else{
+                $('#ctx1').removeClass("show");
+                $('#ctx1').addClass("ctx")
+            }  
+
+        })
+        $('.rmm').change(function(){
+            var responseID = $(this).val();
+            if (responseID == "Downward Roundings"){
+                $('#rm1').removeClass("rm");
+                $('#rm1').addClass("show");
+            }
+            else{
+                $('#rm1').removeClass("show");
+                $('#rm1').addClass("rm")
+            }  
+            if (responseID == "Normal Roundings"){
+                $('#rm2').removeClass("rmmm");
+                $('#rm2').addClass("show");
+            }
+            else{
+                $('#rm2').removeClass("show");
+                $('#rm2').addClass("rmmm")
+            } 
+            if (responseID == "Upward Roundings"){
+                $('#rrm1').removeClass("rrm");
+                $('#rrm1').addClass("show");
+            }
+            else{
+                $('#rrm1').removeClass("show");
+                $('#rrm1').addClass("rrm")
+            }   
+
 
 
         })
 
+        $('.stst').change(function(){
+            var responseID = $(this).val();
+            if (responseID == "gs"){
+                $('#gsgt1').removeClass("gsgt");
+                $('#gsgt1').addClass("show");
+            }
+            else{
+                $('#gsgt1').removeClass("show");
+                $('#gsgt1').addClass("gsgt")
+            }  
+           
+            
+
+        })
+
+
+       
     </script>
 
     

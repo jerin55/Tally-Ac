@@ -59,6 +59,8 @@ def creategroup(request):
 def create_group(request):
     if request.method == 'POST':
         gname = request.POST['gname']
+
+       
         alia = request.POST['alia']
         
         under = request.POST['under']

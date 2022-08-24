@@ -18,11 +18,25 @@
         justify-content: center;
     }
 
-    .hidden{
-        display: none;
-          }
+   
 
-    .show{
+    
+           
+        .form-popup {
+        visibility: hidden;       
+        position: fixed;
+        top: 150px;
+        right: 27px;
+        background-color: rgb(216, 232, 238); 
+        border: 1px solid #f1f1f1;
+        z-index: 9;
+        width: 300px;
+        overflow-y: auto;
+        
+       
+      
+      }
+      .show{
         display: block;
            }
           
@@ -59,58 +73,63 @@
                     
 
                     <div class="row container-fluid   p-2 m-0">
-                        <div class="col-sm-4 m-0 p-0"> <label for="under">Under :</label></div>
+                        <div class="col-sm-4 p-0"> <label for="Under">Under</label></div>
+                        <div class="col-sm-8  p-0"> 
+                        <input type="text" class="custom-select-md form-control" id="primary-text" onfocus="showList()" 
+                          name="under" ></div>
                         <div class="col-sm-8 m-0 p-0 form-group" >
-                            <fieldset>
-                            <select id="under" name="under" class="form-control "> 
-                                <option value="yes" selected></option>  
-                                <option value="primary" >*Primary</option>
+                            <fieldset >
+                                <div class="form-popup" id="list-div"  >
+  
+                                    <h6 style="background-color:rgb(17, 169, 240) ;color:white">List of Groups</h6>
+                                <hr >
+                                <div    style="max-height: 400px; color: black;">
 
-                              
-                                <option value="Bank Accounds" >Bank Accounds</option>
+                                    <a style="color: black;" href="creategroup" ><option  >Create</option></a>
+                                    
 
-                              
-                <option value="Bank OCC A/c" >Bank OCC A/c</option>
-                <option value="Bank OD A/c">Bank OD A/c</option>
-                <option value="Bank_Account">Branch Divisions</option>
-                <option value="Bank_Account">Capital Amount</option>
-                <option value="Bank_Account">Cash in Hand</option>
-                <option value="Bank_Account">Current Assets</option>
-                <option value="Bank_Account">Current Liabilities</option>
-                <option value="Bank_Account">Deposits (Asset)</option>
-                <option value="Bank_Account">Direct Expenses</option>
-                <option value="Bank_Account">Direct Incomes</option>
-                <option value="Bank_Account">Duties and Taxes</option>
-                <option value="Bank_Account">Expenses(Direct)</option>
-                <option value="Bank_Account">Expenses(Indirect)</option>
-                <option value="Bank_Account">Fixed Assets</option>
-                <option value="Bank_Account">Income (Direct)</option>
-                <option value="Bank_Account">Income (Indirect)</option>
-                <option value="Bank_Account">Investments</option>
-                <option value="Bank_Account">Loans & Advances (Asset)</option>
-                <option value="Bank_Account">Loans (Liability)</option>
-                <option value="Bank_Account">Misc. Expenses (Asset)</option>
-                <option value="Bank_Account">provisions</option>
-                <option value="Bank_Account">Purchase Accounts</option>
-                <option value="Bank_Account">Reserves & Surplus</option>
-                <option value="Bank_Account">Retained Earnings</option>
-                <option value="Bank_Account">Sales Accounts</option>
-                <option value="Bank_Account">Secured Loans</option>
-                <option value="Bank_Account">Stock-in-Hand</option>
-                <option value="Bank_Account">Sundry Creditors</option>
-                <option value="Bank_Account">Sundry Debtors</option>
-                <option value="Bank_Account">Suspence A/c</option>
-                <option value="Bank_Account">Unsecured Loans</option> 
-                
-                {% for grp in grp %}
-
-                <option>{{ grp.name }}</option>
-                {% endfor %}
-
-
-              
+                                  <div class="hidden" onclick="hideList('primary')"  value="primary">primary</div>
+                                      
+                                           <div onclick="hideList('Bank OCC A/c')"><option  value="Bank OCC A/c" >Bank OCC A/c</option></div>
+                                            <option  value="Bank OD A/c">Bank OD A/c</option>
+                                            <option value="Bank_Account">Branch Divisions</option>
+                                            <option value="Bank_Account">Capital Amount</option>
+                                            <option value="Bank_Account">Cash in Hand</option>
+                                            <option value="Bank_Account">Current Assets</option>
+                                            <option value="Bank_Account">Current Liabilities</option>
+                                            <option value="Bank_Account">Deposits (Asset)</option>
+                                            <option value="Bank_Account">Direct Expenses</option>
+                                            <option value="Bank_Account">Direct Incomes</option>
+                                            <option value="Bank_Account">Duties and Taxes</option>
+                                            <option value="Bank_Account">Expenses(Direct)</option>
+                                            <option value="Bank_Account">Expenses(Indirect)</option>
+                                            <option value="Bank_Account">Fixed Assets</option>
+                                            <option value="Bank_Account">Income (Direct)</option>
+                                            <option value="Bank_Account">Income (Indirect)</option>
+                                            <option style="color: black;" value="Bank_Account">Investments</option>
+                                            <option value="Bank_Account">Loans & Advances (Asset)</option>
+                                            <option value="Bank_Account">Loans (Liability)</option>
+                                            <option value="Bank_Account">Misc. Expenses (Asset)</option>
+                                            <option value="Bank_Account">provisions</option>
+                                            <option value="Bank_Account">Purchase Accounts</option>
+                                            <option value="Bank_Account">Reserves & Surplus</option>
+                                            <option value="Bank_Account">Retained Earnings</option>
+                                            <option value="Bank_Account">Sales Accounts</option>
+                                            <option value="Bank_Account">Secured Loans</option>
+                                            <option value="Bank_Account">Stock-in-Hand</option>
+                                            <option value="Bank_Account">Sundry Creditors</option>
+                                            <option value="Bank_Account">Sundry Debtors</option>
+                                            <option value="Bank_Account">Suspence A/c</option>
+                                            <option style="color: black;" value="Bank_Account">Unsecured Loans</option> 
+                                            
+                                            {% for grp in grp %}
                             
-                            </select>
+                                            <div onclick="hideList('{{ grp.name }}')" style="color: black;" >{{ grp.name }}</div>
+                                            {% endfor %}
+                                        </div>
+                                        
+                            
+                                </div>
                         </fieldset>
                         
                             
@@ -120,14 +139,15 @@
                         </div> 
                     </div>
 
-                <div class="hidden form-group" id="pDetail">
+                <div class="hidden form-group" id="pDetail" style="display: none;" >
                 <fieldset class="container ">
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="subled">Nature of group :</label></div>
                         <div class="col-sm-8 m-0 p-0">
                             <select id="namegroup" name="namegroup" class=" form-control">
+                                <option selected></option>
                                 <option value="Accept">Accept</option>
-                                <option value="Expenses" selected>Expenses</option>
+                                <option value="Expenses">Expenses</option>
                                 <option value="Income">Income</option>
                                 <option value="Liabilities">Liabilities</option>
                             </select>
@@ -201,17 +221,29 @@
 </div>
 </div>
 <script>
-    $('select').change(function(){
-        var responseID = $(this).val();
-        if(responseID =="primary"){
-            $('#pDetail').removeClass("hidden");
-            $('#pDetail').addClass("show");
-       }else{
-            $('#pDetail').removeClass("show");
-            $('#pDetail').addClass("hidden");
-        }
-       
+
+    
+
+ $(document).ready(function(){
+        $('.hidden').click(function(){
+            $(".hidden").show();
+        });
+        
     });
+
+    
+   
+
+    function showList() {
+                      document.getElementById("list-div").style.visibility = "visible";
+                  }
+                  function hideList(valueDIv) {
+                      document.getElementById("primary-text").value=valueDIv;
+                      document.getElementById("list-div").style.visibility = "hidden";
+                  }
+
+
+            
 
 
 

@@ -170,15 +170,21 @@
     .close:hover{
         color: yellow;
     }
-       .hidden{
+      #pDetails{
         display: none;
-          }
+
+      }
+      #pDetail{
+        display: none;
+
+      }
+      
+
+      
        .show{
         display: block;
            }
-            .hi{
-                display: none;
-            }
+           
             .od{
                 display: none;
             }
@@ -263,6 +269,20 @@
             .oth{
                 display: none;
             }
+            .form-popup {
+        visibility: hidden;       
+        position: fixed;
+        top: 150px;
+        right: 27px;
+        background-color: rgb(216, 232, 238); 
+        border: 1px solid #f1f1f1;
+        z-index: 9;
+        width: 190px;
+        overflow-y: auto;
+        
+       
+      
+      }
         </style>
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -287,65 +307,84 @@
         
     </div></div>
 
-    <div class="right2 form-group" style="padding-left: 40px;" >
-        <label>Under</label>
-        <fieldset>
-        <select class="under form-control"   name="under" id="under" style="width: 170px; ">
-            
-            <option  value="yes"></option>
-            
-            <option  value="Bank Account">Bank Accouts</option>
-            <option  value="Bank OCC A/c">Bank OCC A/c </option>
-            <option value="Bank OD A/c">Bank OD A/c</option>
-            <option value="Bank_Account">Branch Divisions</option>
-            <option value="Bank_Account">Capital Amount</option>
-            <option value="Bank_Account">Cash in Hand</option>
-            <option value="Current Assets">Current Assets</option>
-            <option value="Bank_Account">Current Liabilities</option>
-            <option value="Bank_Account">Deposits (Asset)</option>
-            <option value="Direct Expenses">Direct Expenses</option>
-            <option value="Direct Incomes">Direct Incomes</option>
-            <option value="Duties and Taxes">Duties and Taxes</option>
-            <option value="Bank_Account">Expenses(Direct)</option>
-            <option value="Bank_Account">Expenses(Indirect)</option>
-            <option value="Bank_Account">Fixed Assets</option>
-            <option value="Bank_Account">Income (Direct)</option>
-            <option value="Bank_Account">Income (Indirect)</option>
-            <option value="Bank_Account">Investments</option>
-            <option value="Bank_Account">Loans & Advances (Asset)</option>
-            <option value="Bank_Account">Loans (Liability)</option>
-            <option value="Bank_Account">Misc. Expenses (Asset)</option>
-            <option value="Bank_Account">provisions</option>
-            <option value="Bank_Account">Purchase Accounts</option>
-            <option value="Bank_Account">Reserves & Surplus</option>
-            <option value="Bank_Account">Retained Earnings</option>
-            <option value="Bank_Account">Sales Accounts</option>
-            <option value="Bank_Account">Secured Loans</option>
-            <option value="Bank_Account">Stock-in-Hand</option>
-            <option value="Bank_Account">Sundry Creditors</option>
-            <option value="Bank_Account">Sundry Debtors</option>
-            <option value="Bank_Account">Suspence A/c</option>
-            <option value="Bank_Account">Unsecured Loans</option>   
-            {% for grp in grp %}
-
-            <option value="">{{ grp.name }}</option>
-
-            {% endfor %}
-     
-        
-        </select>
-    </fieldset>
-
-    </div>
-
    
-  
     
-</div>
+    <div class="row container-fluid   p-2 m-0">
+        <div class="col-sm-6 p-0" > <label for="Under">Under</label>
+        <div class="col-sm-8  p-0" style="padding-left: 40px;"> 
+        <input type="text" class="custom-select-md form-control"  id="primary-text" onfocus="showList()" 
+          name="under" ></div></div>
+        <div class="col-sm-8 m-0 p-0 form-group" >
+            <fieldset  >
+                <div class="form-popup" id="list-div"  >
+
+                    <h6 style="background-color:rgb(17, 169, 240) ;color:white">List of Groups</h6>
+                <hr >
+                
+                <div  style="max-height: 400px; color: black;">
+
+                    <section class="under" id="under">
+
+                    <a style="color: black;"  href="creategroup" ><option  >Create</option></a>
+
+                    <div onclick="hideList('Bank Account'),showit()"  > Bank Account  </div>
+                    <div onclick="hideList('Bank OCC A/c'),showz()" >Bank OCC A/c </div>
+                    
+                            <div onclick="hideList('Bank OD A/c')"  id="Bank OD A/c">Bank OD A/c</div>
+                            <option value="Bank_Account">Branch Divisions</option>
+                            <option value="Bank_Account">Capital Amount</option>
+                            <option value="Bank_Account">Cash in Hand</option>
+                            <option value="Bank_Account">Current Assets</option>
+                            <option value="Bank_Account">Current Liabilities</option>
+                            <option value="Bank_Account">Deposits (Asset)</option>
+                            <option value="Bank_Account">Direct Expenses</option>
+                            <option value="Bank_Account">Direct Incomes</option>
+                            <option value="Bank_Account">Duties and Taxes</option>
+                            <option value="Bank_Account">Expenses(Direct)</option>
+                            <option value="Bank_Account">Expenses(Indirect)</option>
+                            <option value="Bank_Account">Fixed Assets</option>
+                            <option value="Bank_Account">Income (Direct)</option>
+                            <option value="Bank_Account">Income (Indirect)</option>
+                            <option style="color: black;" value="Bank_Account">Investments</option>
+                            <option value="Bank_Account">Loans & Advances (Asset)</option>
+                            <option value="Bank_Account">Loans (Liability)</option>
+                            <option value="Bank_Account">Misc. Expenses (Asset)</option>
+                            <option value="Bank_Account">provisions</option>
+                            <option value="Bank_Account">Purchase Accounts</option>
+                            <option value="Bank_Account">Reserves & Surplus</option>
+                            <option value="Bank_Account">Retained Earnings</option>
+                            <option value="Bank_Account">Sales Accounts</option>
+                            <option value="Bank_Account">Secured Loans</option>
+                            <option value="Bank_Account">Stock-in-Hand</option>
+                            <option value="Bank_Account">Sundry Creditors</option>
+                            <option value="Bank_Account">Sundry Debtors</option>
+                            <option value="Bank_Account">Suspence A/c</option>
+                            <option style="color: black;" value="Bank_Account">Unsecured Loans</option> 
+                            
+                            {% for grp in grp %}
+            
+                            <div onclick="hideList('{{ grp.name }}')" style="color: black;" >{{ grp.name }}</div>
+                            {% endfor %}
+
+                        </section>
+                       
+                        </div>
+                        
+            
+                </div>
+        </fieldset>
+        
+            
+           
+           
+
+        </div> 
+    </div>
+    </div>
 <div class="bottom ">
    
 <div class=" right2 " >
-    <div class="hidden" id="pDetails">
+    <div class="" id="pDetails">
         <div>
         <h4>Bank Account Details</h4>
         <label>A/C holders name</label>
@@ -1049,15 +1088,31 @@
 </div>
 
     <script>
+
+function showz() {
+    document.getElementById("pDetails").style.display ="none";
+    document.getElementById("pDetail").style.display ="block";
+}             
+
+function showit() {
+    document.getElementById("pDetail").style.display ="none";
+    document.getElementById("pDetails").style.display ="block";
+    
+}   
+
+
+
+
+function showList() {
+                      document.getElementById("list-div").style.visibility = "visible";
+                  }
+                  function hideList(valueDIv) {
+                      document.getElementById("primary-text").value=valueDIv;
+                      document.getElementById("list-div").style.visibility = "hidden";
+                  }
         $('.under').change(function(){
             var responseID = $(this).val();
-            if(responseID =="Bank Account"){
-                $('#pDetails').removeClass("hidden");
-                $('#pDetails').addClass("show");
-           }else{
-                $('#pDetails').removeClass("show");
-                $('#pDetails').addClass("hidden");
-            }
+           
             if(responseID =="Bank OD A/c"){
                 $('#pDetail').removeClass("hi");
                 $('#pDetail').addClass("show");

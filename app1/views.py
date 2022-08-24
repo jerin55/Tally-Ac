@@ -177,7 +177,8 @@ def ledgercreations(request):
         return redirect('ledgerlist')
 
 
-
+def nw(request):
+    return render(request,'nw.html')
 
 
 

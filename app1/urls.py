@@ -24,7 +24,8 @@ urlpatterns = [
     path('credit',views.credit,name='credit'),
     path('debi',views.debi,name='debi'),
     path('ledgercreations',views.ledgercreations,name='ledgercreations'),
-    path('ledgerlist',views.ledgerlist,name='ledgerlist')
+    path('ledgerlist',views.ledgerlist,name='ledgerlist'),
+    path('nw',views.nw,name='nw')
 
 
 

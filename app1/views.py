@@ -81,7 +81,7 @@ def create_group(request):
             method_to_allocate_usd_purchase=meth,
         )
         mdl.save()
-        return redirect('/')
+        return redirect('createledger')
         
 
 def grcreate(request):
@@ -178,7 +178,8 @@ def ledgercreations(request):
 
 
 def nw(request):
-    return render(request,'nw.html')
+    ledi=led.objects.all()
+    return render(request,'nw.html',{'ledg':ledi})
 
 
 

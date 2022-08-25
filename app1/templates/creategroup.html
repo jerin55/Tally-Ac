@@ -39,6 +39,13 @@
       .show{
         display: block;
            }
+           .huh:hover{
+            background-color: orange;
+           }
+           .prmm{
+            display: none;
+           }
+          
           
            
 
@@ -61,7 +68,7 @@
    
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4  p-0"> <label for="gname">Name :</label></div>
-                        <div class="col-sm-8  p-0"><input type="text" id="gname"   name="gname" class="form-control" placeholder=""></div> 
+                        <div class="col-sm-8  p-0"><input type="text" id="gname"   name="gname" class="form-control" placeholder="" required></div> 
                     </div>
 
                     
@@ -83,48 +90,49 @@
   
                                     <h6 style="background-color:rgb(17, 169, 240) ;color:white">List of Groups</h6>
                                 <hr >
-                                <div    style="max-height: 400px; color: black;">
+                                <div    style="max-height: 400px; color: black; padding: 10px;cursor: pointer;">
 
-                                    <a style="color: black;" href="creategroup" ><option  >Create</option></a>
+                                <div class="huh" style="padding-left: 200px;" >   <a style="color: black;" href="creategroup" >Create</a></div> 
+                                <hr style="background-color:black">
                                     
 
-                                  <div class="hidden" onclick="hideList('primary')"  value="primary">primary</div>
+                                  <div class="huh" class="hidden" onclick="hideList('primary'),shg()"  value="primary">primary</div>
                                       
-                                           <div onclick="hideList('Bank OCC A/c')"><option  value="Bank OCC A/c" >Bank OCC A/c</option></div>
-                                            <option  value="Bank OD A/c">Bank OD A/c</option>
-                                            <option value="Bank_Account">Branch Divisions</option>
-                                            <option value="Bank_Account">Capital Amount</option>
-                                            <option value="Bank_Account">Cash in Hand</option>
-                                            <option value="Bank_Account">Current Assets</option>
-                                            <option value="Bank_Account">Current Liabilities</option>
-                                            <option value="Bank_Account">Deposits (Asset)</option>
-                                            <option value="Bank_Account">Direct Expenses</option>
-                                            <option value="Bank_Account">Direct Incomes</option>
-                                            <option value="Bank_Account">Duties and Taxes</option>
-                                            <option value="Bank_Account">Expenses(Direct)</option>
-                                            <option value="Bank_Account">Expenses(Indirect)</option>
-                                            <option value="Bank_Account">Fixed Assets</option>
-                                            <option value="Bank_Account">Income (Direct)</option>
-                                            <option value="Bank_Account">Income (Indirect)</option>
-                                            <option style="color: black;" value="Bank_Account">Investments</option>
-                                            <option value="Bank_Account">Loans & Advances (Asset)</option>
-                                            <option value="Bank_Account">Loans (Liability)</option>
-                                            <option value="Bank_Account">Misc. Expenses (Asset)</option>
-                                            <option value="Bank_Account">provisions</option>
-                                            <option value="Bank_Account">Purchase Accounts</option>
-                                            <option value="Bank_Account">Reserves & Surplus</option>
-                                            <option value="Bank_Account">Retained Earnings</option>
-                                            <option value="Bank_Account">Sales Accounts</option>
-                                            <option value="Bank_Account">Secured Loans</option>
-                                            <option value="Bank_Account">Stock-in-Hand</option>
-                                            <option value="Bank_Account">Sundry Creditors</option>
-                                            <option value="Bank_Account">Sundry Debtors</option>
-                                            <option value="Bank_Account">Suspence A/c</option>
-                                            <option style="color: black;" value="Bank_Account">Unsecured Loans</option> 
+                                           <div class="huh"  onclick="hideList('Bank OCC A/c'),sg()">  Bank OCC A/c</div>
+                                            <div class="huh" onclick="hideList('Bank OD A/c'),sg()" value="Bank OD A/c">Bank OD A/c</div>
+                                            <div class="huh" onclick="hideList('Branch Divisions'),sg()" value="Branch Divisions">Branch Divisions</div>
+                                            <div class="huh" onclick="hideList('Capital Amount'),sg()" value="Capital Amount">Capital Amount</div>
+                                            <div class="huh" onclick="hideList('Cash in Hand'),sg()" value="Bank_Account">Cash in Hand</div>
+                                            <div class="huh" onclick="hideList('Current Assets'),sg()" value="Bank_Account">Current Assets</div>
+                                            <div class="huh" onclick="hideList('Current Liabilities'),sg()" value="Bank_Account">Current Liabilities</div>
+                                            <div class="huh" onclick="hideList('Deposits (Asset)'),sg()" value="Bank_Account">Deposits (Asset)</div>
+                                            <div class="huh" onclick="hideList('Direct Expenses'),sg()" value="Bank_Account">Direct Expenses</div>
+                                            <div class="huh" onclick="hideList('Direct Incomes'),sg()" value="Bank_Account">Direct Incomes</div>
+                                            <div class="huh" onclick="hideList('Duties and Taxes'),sg()" value="Bank_Account">Duties and Taxes</div>
+                                            <div class="huh" onclick="hideList('Expenses(Direct)'),sg()" value="Bank_Account">Expenses(Direct)</div>
+                                            <div class="huh" onclick="hideList('Expenses(Indirect)'),sg()" value="Bank_Account">Expenses(Indirect)</div>
+                                            <div class="huh" onclick="hideList('Fixed Assets'),sg()" value="Bank_Account">Fixed Assets</div>
+                                            <div class="huh" onclick="hideList('Income (Direct)'),sg()" value="Bank_Account">Income (Direct)</div>
+                                            <div class="huh" onclick="hideList('Income (Indirect)'),sg()" value="Bank_Account">Income (Indirect)</div>
+                                            <div class="huh" onclick="hideList('Investments'),sg()" style="color: black;" value="Bank_Account">Investments</div>
+                                            <div class="huh" onclick="hideList('Loans & Advances (Asset)'),sg()" value="Bank_Account">Loans & Advances (Asset)</div>
+                                            <div class="huh" onclick="hideList('Loans (Liability)'),sg()" value="Bank_Account">Loans (Liability)</div>
+                                            <div class="huh" onclick="hideList('Misc. Expenses (Asset)'),sg()" value="Bank_Account">Misc. Expenses (Asset)</div>
+                                            <div class="huh" onclick="hideList('provisions'),sg()" value="Bank_Account">provisions</div>
+                                            <div class="huh" onclick="hideList('Purchase Accounts'),sg()" value="Bank_Account">Purchase Accounts</div>
+                                            <div class="huh" onclick="hideList('Reserves & Surplus'),sg()" value="Bank_Account">Reserves & Surplus</div>
+                                            <div class="huh" onclick="hideList('Retained Earnings'),sg()" value="Bank_Account">Retained Earnings</div>
+                                            <div class="huh" onclick="hideList('Sales Accounts'),sg()" value="Bank_Account">Sales Accounts</div>
+                                            <div class="huh" onclick="hideList('Secured Loans'),sg()"  value="Bank_Account">Secured Loans</div>
+                                            <div class="huh" onclick="hideList('Stock-in-Hand'),sg()" value="Bank_Account">Stock-in-Hand</div>
+                                            <div class="huh" onclick="hideList('Sundry Creditors'),sg()" value="Bank_Account">Sundry Creditors</div>
+                                            <div class="huh" onclick="hideList('Sundry Debtors'),sg()" value="Bank_Account">Sundry Debtors</div>
+                                            <div class="huh" onclick="hideList('Suspence A/c'),sg()" value="Bank_Account">Suspence A/c</div>
+                                            <div class="huh" onclick="hideList('Unsecured Loans'),sg()" style="color: black;" value="Bank_Account">Unsecured Loans</div> 
                                             
                                             {% for grp in grp %}
                             
-                                            <div onclick="hideList('{{ grp.name }}')" style="color: black;" >{{ grp.name }}</div>
+                                            <div class="huh" onclick="hideList('{{ grp.name }}')" style="color: black;" >{{ grp.name }}</div>
                                             {% endfor %}
                                         </div>
                                         
@@ -139,12 +147,12 @@
                         </div> 
                     </div>
 
-                <div class="hidden form-group" id="pDetail" style="display: none;" >
+                <div class="hidden form-group" id="hidden" style="display: none;" >
                 <fieldset class="container ">
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="subled">Nature of group :</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                            <select id="namegroup" name="namegroup" class=" form-control">
+                            <select id="namegroup" name="namegroup" class="prm form-control">
                                 <option selected></option>
                                 <option value="Accept">Accept</option>
                                 <option value="Expenses">Expenses</option>
@@ -152,14 +160,23 @@
                                 <option value="Liabilities">Liabilities</option>
                             </select>
                         </div> 
+
+                        <div class="prmm row container-fluid  p-2 m-0" id="prmm1">
+                            <div class="col-sm-4 m-0 p-0"> <label for="subledd">Does it affect gross profit :</label></div>
+                            <div class="col-sm-8 m-0 p-0">
+                                <select id="subledd" name="subledd" class=" form-control">
+                                    <option value="True">Yes</option>
+                                    <option value="False" selected>No</option>
+                                </select>
+                            </div> 
+                        </div>
+
+                      
                     </div>
                 </fieldset>
                 </div>
 
-                
-                    
 
-                            
 
 
 
@@ -224,12 +241,12 @@
 
     
 
- $(document).ready(function(){
-        $('.hidden').click(function(){
-            $(".hidden").show();
-        });
-        
-    });
+function shg() {
+    document.getElementById("hidden").style.display='block';
+}
+function sg() {
+    document.getElementById("hidden").style.display='none';
+}
 
     
    
@@ -241,6 +258,21 @@
                       document.getElementById("primary-text").value=valueDIv;
                       document.getElementById("list-div").style.visibility = "hidden";
                   }
+
+            $('.prm').change(function(){
+            var responseID = $(this).val();
+            if (responseID == "Expenses"){
+                $('#prmm1').removeClass("prmm");
+                $('#prmm1').addClass("show");
+            }
+            else{
+                $('#prmm1').removeClass("show");
+                $('#prmm1').addClass("prmm")
+            }  
+           
+            
+
+        })                  
 
 
             

@@ -4,7 +4,7 @@
 <style>
     .close {
         position: absolute;
-        top: 3px;
+        top: 1px;
         right: 8px;
         font-size: 25px;
         color: rgb(255, 255, 255);
@@ -18,8 +18,10 @@
         justify-content: center;
     }
     .fo:hover{
-        background: rgb(49, 104, 187);
-        
+        background: rgb(202, 202, 13);
+    }
+    .ui:hover{
+        background-color:rgb(202, 202, 13) ;
     }
 
 
@@ -32,7 +34,7 @@
     <div class="col-sm-3 m-0 p-0"></div>
     <div class="col-sm-6 m-0 p-0" style=" background-color:rgba(0,0,0,0.2);">
       <!-- <a href="javascript:history.go(-1);" class="close">+</a>--> 
-    <h6  class="bg-info text-light p-2">List Of Ledgers</h6>
+    <h6  class="bg-info text-light p-2">List of Ledgers</h6>
     
 
 <form id="myForm" action="" method="post" class="">
@@ -40,16 +42,36 @@
    
                    
 
-                    <div class="fo  col-sm-13 m-0 p-0 w-200 py-4"   ><a id="cbtn" href="createledger"  style="padding-left: 6px; margin-left: 600px;" class="">Create</a></div>
+                    <div class="fo  col-sm-13 m-0 p-0  py-2"   ><a id="cbtn" href="createledger"  style="padding-left: 6px; margin-left: 600px;width: 50px;" class="">Create</a></div>
 
                     <hr>
+
+                    {% for ledg in ledg  %}
+
+                    <div>
+                          
+                          
+                           
+                            <p class="ui" style="padding: 5px;" >
+                                <a href="nw" >{{ ledg.lname }}</a>
+                            </div>
+                       
+                        
+
+                    
+                   
+
+
+                    {% endfor %}
                    
                  
               
 
+
     
 </form>
 
+</div>
 </div>
 </div>
 <div class="col-sm-3  m-0 p-0"></div>

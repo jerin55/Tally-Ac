@@ -13,3 +13,4 @@ admin.site.register(grunder),
 admin.site.register(GroupModel),
 admin.site.register(debit),
 admin.site.register(cred)
+admin.site.register(led)

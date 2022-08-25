@@ -114,6 +114,15 @@ class cred(models.Model):
   def _str_(self):
         return self.name 
 
+class led(models.Model):
+  date=models.DateField()
+  openam=models.IntegerField()
+  penam=models.IntegerField()
+  due=models.DateField()
+  overd=models.IntegerField() 
+
+       
+
 
 
 

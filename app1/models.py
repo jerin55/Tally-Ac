@@ -53,19 +53,22 @@ class grunder(models.Model):
   und=models.CharField(max_length=255)  
 
   def __str__(self):
-      return self.und    
+      return self.und  
+
+     
 
 
 
 class GroupModel(models.Model):
-    name = models.CharField(max_length=225)
-    alias = models.CharField(max_length=225,null=True)
-    under = models.CharField(max_length=225)
-    namegroup=models.CharField(max_length=255,null=True)
-    gp_behaves_like_sub_ledger = models.BooleanField(default=False)
-    nett_debit_credit_bal_reporting = models.BooleanField(default=False)
-    used_for_calculation = models.BooleanField(default=False)
-    method_to_allocate_usd_purchase = models.CharField(max_length=225,null=True,blank=True)
+    group_name  = models.CharField(max_length=225)
+    group_alias  = models.CharField(max_length=225,null=True)
+    group_under  = models.CharField(max_length=225)
+    nature = models.CharField(max_length=255,null=True)
+    gross_profit = models.CharField(max_length=255 ,null=True)
+    sub_ledger  = models.BooleanField(default=False)
+    debit_credit  = models.BooleanField(default=False)
+    calculation  = models.BooleanField(default=False)
+    invoice  = models.CharField(max_length=225,null=True,blank=True)
 
     def _str_(self):
         return self.name      
@@ -73,27 +76,76 @@ class GroupModel(models.Model):
 
 
 class ledgercreation(models.Model):
-  lname=models.CharField(max_length=255,null=True)
+  name=models.CharField(max_length=255,null=True)
   alias=models.CharField(max_length=255,null=True)
   under=models.CharField(max_length=255)
-  prbankdetals=models.CharField(max_length=255,)
-  holders_name=models.CharField(max_length=255,null=True)
-  ac_no=models.IntegerField(null=True) 
-  ifsc=models.IntegerField(null=True)
-  swiftcode=models.IntegerField(null=True)
-  bankname=models.CharField(max_length=255,null=True) 
-  branch=models.CharField(max_length=255,null=True)
-  checkbook=models.CharField(max_length=255,null=True)
-  checkprinting=models.CharField(max_length=255,null=True) 
-  mailname=models.CharField(max_length=255,null=True)
-  mailaddress=models.CharField(max_length=255,null=True)
-  mailcontry=models.CharField(max_length=255,null=True)
-  mailstate=models.CharField(max_length=255,null=True)
-  mailpin=models.IntegerField(null=True)
-  pan=models.IntegerField(null=True)
-  regtype=models.CharField(max_length=255,null=True)
-  gst=models.IntegerField(null=True)
-  gstdetails=models.CharField(max_length=255,null=True)
+  bank_details=models.CharField(max_length=255,) 
+  mname=models.CharField(max_length=255,null=True)
+  address=models.CharField(max_length=255,null=True)
+  country=models.CharField(max_length=255,null=True)
+  state=models.CharField(max_length=255,null=True)
+  pincode =models.IntegerField(null=True)
+  pan_no =models.IntegerField(null=True)
+  registration_type =models.CharField(max_length=255,null=True)
+  gst_uin =models.IntegerField(null=True)
+  set_alter_gstdetails =models.CharField(max_length=255,null=True)
+
+  
+
+
+  ac_holder_nm =models.CharField(max_length=255,null=True)
+  acc_no =models.IntegerField(null=True) 
+  ifsc_code =models.IntegerField(null=True)
+  swift_code =models.IntegerField(null=True)
+  bank_name =models.CharField(max_length=255,null=True) 
+  branch =models.CharField(max_length=255,null=True)
+  SA_cheque_bk =models.CharField(max_length=255,null=True)
+  Echeque_p =models.CharField(max_length=255,null=True)
+
+  occ_set_odl = models.CharField(max_length=255,null=True)
+  occ_ac_holder_nm =models.CharField(max_length=255,null=True)
+  occ_acc_no =models.IntegerField(null=True) 
+  occ_ifsc_code =models.IntegerField(null=True)
+  occ_swift_code =models.IntegerField(null=True)
+  occ_bank_name =models.CharField(max_length=255,null=True) 
+  occ_branch =models.CharField(max_length=255,null=True)
+  occ_SA_cheque_bk =models.CharField(max_length=255,null=True)
+  occ_Echeque_p =models.CharField(max_length=255,null=True)
+
+  od_set_odl = models.CharField(max_length=255,null=True)
+  od_ac_holder_nm =models.CharField(max_length=255,null=True)
+  od_acc_no =models.IntegerField(null=True) 
+  od_ifsc_code =models.IntegerField(null=True)
+  od_swift_code =models.IntegerField(null=True)
+  od_bank_name =models.CharField(max_length=255,null=True) 
+  od_branch =models.CharField(max_length=255,null=True)
+  od_SA_cheque_bk =models.CharField(max_length=255,null=True)
+  od_Echeque_p =models.CharField(max_length=255,null=True)
+
+  
+
+  statutory_details=models.CharField(max_length=255,null=True)
+
+  type_of_ledger = models.CharField(max_length=100,null=True)
+  rounding_method = models.CharField(max_length=100,null=True)
+  rounding_limit = models.IntegerField(blank=True, null=True, default=None)
+  GST_Applicable = models.CharField(max_length=100,null=True)
+  Alter_GST_Details= models.CharField(max_length=100,null=True)
+  Appropriate=models.CharField(max_length=100,null=True)
+  Types_of_supply=models.CharField(max_length=100,null=True)
+
+  type_duty_tax = models.CharField(max_length=100,null=True)
+  tax_type = models.CharField(max_length=100,null=True)
+  percentage_of_calcution = models.CharField(max_length=100,null=True)
+  rond_method = models.CharField(max_length=100,null=True)
+  rond_limit = models.IntegerField(blank=True, null=True, default=None)
+
+  balance_billbybill = models.CharField(max_length=100,null=True)
+  credit_period = models.CharField(max_length=100,null=True)
+  creditdays_voucher = models.CharField(max_length=100,null=True)
+
+
+
 
 
 class debit(models.Model):
@@ -120,6 +172,8 @@ class led(models.Model):
   penam=models.IntegerField()
   due=models.DateField()
   overd=models.IntegerField() 
+
+
 
        
 

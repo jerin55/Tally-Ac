@@ -68,14 +68,14 @@
    
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4  p-0"> <label for="gname">Name :</label></div>
-                        <div class="col-sm-8  p-0"><input type="text" id="gname"   name="gname" class="form-control" placeholder="" required></div> 
+                        <div class="col-sm-8  p-0"><input type="text" id="gname"   name="group_name" class="form-control" placeholder="" required></div> 
                     </div>
 
                     
 
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 p-0"> <label for="alia">(Alias) :</label></div>
-                        <div class="col-sm-8  p-0"><input type="text"  id="alia"  name="alia" class="form-control" placeholder=""></div> 
+                        <div class="col-sm-8  p-0"><input type="text"  id="alia"  name="group_alias" class="form-control" placeholder=""></div> 
                     </div>
                     
 
@@ -83,7 +83,7 @@
                         <div class="col-sm-4 p-0"> <label for="Under">Under</label></div>
                         <div class="col-sm-8  p-0"> 
                         <input type="text" class="custom-select-md form-control" id="primary-text" onfocus="showList()" 
-                          name="under" ></div>
+                          name="group_under" ></div>
                         <div class="col-sm-8 m-0 p-0 form-group" >
                             <fieldset >
                                 <div class="form-popup" id="list-div"  >
@@ -132,7 +132,7 @@
                                             
                                             {% for grp in grp %}
                             
-                                            <div class="huh" onclick="hideList('{{ grp.name }}')" style="color: black;" >{{ grp.name }}</div>
+                                            <div class="huh" onclick="hideList('{{ grp.name }}'),sg()" style="color: black;" >{{ grp.name }}</div>
                                             {% endfor %}
                                         </div>
                                         
@@ -152,7 +152,7 @@
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="subled">Nature of group :</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                            <select id="namegroup" name="namegroup" class="prm form-control">
+                            <select id="namegroup" name="nature" class="prm form-control">
                                 <option selected></option>
                                 <option value="Accept">Accept</option>
                                 <option value="Expenses">Expenses</option>
@@ -164,9 +164,9 @@
                         <div class="prmm row container-fluid  p-2 m-0" id="prmm1">
                             <div class="col-sm-4 m-0 p-0"> <label for="subledd">Does it affect gross profit :</label></div>
                             <div class="col-sm-8 m-0 p-0">
-                                <select id="subledd" name="subledd" class=" form-control">
-                                    <option value="True">Yes</option>
-                                    <option value="False" selected>No</option>
+                                <select id="subledd" name="gross_profit" class=" form-control">
+                                    <option value="yes">Yes</option>
+                                    <option value="no" selected>No</option>
                                 </select>
                             </div> 
                         </div>
@@ -183,7 +183,7 @@
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="subled">Groups behaves like a sub-ledger:</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                            <select id="subled" name="subled" class=" form-control">
+                            <select id="subled" name="sub_ledger" class=" form-control">
                                 <option value="True">Yes</option>
                                 <option value="False" selected>No</option>
                             </select>
@@ -196,7 +196,7 @@
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="nett">Nett Debit/Credit Balance for Reporting:</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                            <select id="nett" name="nee" class=" form-control">
+                            <select id="nett" name="debit_credit" class=" form-control">
                                 <option value="True">Yes</option>
                                 <option value="False" selected>No</option>
                             </select>
@@ -209,7 +209,7 @@
                             <br><small style="font-size: 10px;">(for example:taxes,discounts,Sales invoice
                                 entries)</small>:</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                            <select id="cal" name="cal" class=" form-control">
+                            <select id="cal" name="calculation" class=" form-control">
                                 <option value="True">Yes</option>
                                 <option value="False" selected>No</option>
                             </select>
@@ -219,7 +219,7 @@
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="meth"> Method to allocate when used in purchase invoice :</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                            <select id="meth" name="meth" class=" form-control">
+                            <select id="meth" name="invoice" class=" form-control">
                                 <option value="" selected>Not Applicable</option>
                                 <option value="Appropriate by Qty">Appropriate by Qty</option>
                                 <option value="Appropriate by Value">Appropriate by Value</option>

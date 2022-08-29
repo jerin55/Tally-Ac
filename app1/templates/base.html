@@ -36,7 +36,6 @@
     <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}" />
     <!-- App CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/app.css' %}" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         .a {
             font-family: "Poppins", sans-serif;
@@ -55,13 +54,7 @@
                 $select3.html($options1.filter('[text="' + this.value + '"]'));
             }).trigger('change');
         });
-
-
-        
     </script>
-  
-   
-
 </head>
 
 <body style="background-color: #2f516f;">
@@ -262,7 +255,6 @@
                             </ul>
                         </li>
 
-
                         <li>
                             <a href="javascript:;" class="has-arrow">
                                 <div class="fa fa-laptop"><i class=""></i>
@@ -276,7 +268,7 @@
                                             <ul>
                                                 <li><a href="receivabl"><i class=" bx bx-caret-right"></i>Receivables</a></li>
                                                 <li><a href="payabl"><i class=" bx bx-caret-right"></i>Payables</a></li>
-                                                <li><a href="grcreate"><i class=" bx bx-caret-right"></i>Groups</a></li>
+                                                <li><a href="grcreate"><i class=" bx bx-caret-right"></i>Group</a></li>
                                                 <li><a href="ledgerlist"><i class=" bx bx-caret-right"></i>Ledger</a></li>
                                             </ul>
                                         
@@ -302,28 +294,31 @@
                                         <li><a href="voucher"><i class=" bx bx-caret-right"></i>Voucher Types</a></li>
                                         <li><a href="costcat"><i class=" bx bx-caret-right"></i>Cost Categories</a></li>
                                         <li><a href="costcentr"><i class=" bx bx-caret-right"></i>Cost Centres</a></li>
-                                        <li><a href="#"><i class=" bx bx-caret-right"></i>Currencies</a></li>
+                                        <li><a href="currency"><i class=" bx bx-caret-right"></i>Currencies</a></li>
+                                        <li><a href="load_create_currency"><i class=" bx bx-caret-right"></i>Create Currency</a></li>
+
                                         <li><a href="#"><i class=" bx bx-caret-right"></i>Budgets</a></li>
                                         <li><a href="#"><i class=" bx bx-caret-right"></i>Scenarios</a></li>
+                                       
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Inventory Master</a>
                                     <ul>
-                                        <li><a href="group"><i class=" bx bx-caret-right"></i>Stock Groups</a></li>
-                                        <li><a href="ledger"><i class=" bx bx-caret-right"></i>Stock Items</a></li>
-                                        <li><a href="#"><i class=" bx bx-caret-right"></i>Stock Categories</a></li>
-                                        <li><a href="#"><i class=" bx bx-caret-right"></i>Units</a></li>
-                                        <li><a href="#"><i class=" bx bx-caret-right"></i>Godowns</a></li>
+                                        <li><a href="stock_grp"><i class=" bx bx-caret-right"></i>Stock Groups</a></li>
+                                        <li><a href="stock_items"><i class=" bx bx-caret-right"></i>Stock Items</a></li>
+                                        <li><a href="stock_cat"><i class=" bx bx-caret-right"></i>Stock Categories</a></li>
+                                        <li><a href="units"><i class=" bx bx-caret-right"></i>Units</a></li>
+                                        <li><a href="godwn"><i class=" bx bx-caret-right"></i>Godowns</a></li>
                                        
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Payroll Masters</a>
                                     <ul>
-                                        <li><a href="group"><i class=" bx bx-caret-right"></i>Employee Categories</a></li>
-                                        <li><a href="ledger"><i class=" bx bx-caret-right"></i>Employee Groups</a></li>
-                                        <li><a href="#"><i class=" bx bx-caret-right"></i>Employees</a></li>
-                                        <li><a href="#"><i class=" bx bx-caret-right"></i>Attendance/Production Types</a></li>
-                                        <li><a href="#"><i class=" bx bx-caret-right"></i>Pay Heads</a></li>
+                                        <li><a href="emp_cat"><i class=" bx bx-caret-right"></i>Employee Categories</a></li>
+                                        <li><a href="emp_grp"><i class=" bx bx-caret-right"></i>Employee Groups</a></li>
+                                        <li><a href="emp"><i class=" bx bx-caret-right"></i>Employees</a></li>
+                                        <li><a href="atndnce_list"><i class=" bx bx-caret-right"></i>Attendance/Production Types</a></li>
+                                        <li><a href="pay"><i class=" bx bx-caret-right"></i>Pay Heads</a></li>
                                        
                                     </ul>
                                 </li>
@@ -454,6 +449,7 @@
                     </ul>
                 </nav>
             </div>
+           
          
             <div class="page-wrapper">
                 <div class="page-content-wrapper" style="background-color: #2f516f;">
@@ -469,14 +465,17 @@
                             </div>
                         </div>
                         {% endif %} {% endfor %}
+                        
                     </div>
                     {% block body %} {% endblock %}
 
                 </div>
+                
             </div>
         </div>
 
     </div>
+
     <!-- end wrapper -->
     <!-- JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -302,6 +302,15 @@ def nw(request):
     ledi=led.objects.all()
     return render(request,'nw.html',{'ledg':ledi})
 
+def groupsummery(request):
+    return render(request,'groupsummery.html')    
+
+def ledgersummary(request):
+    return render(request,'ledgersummary.html')    
+
+def ledgervoucher(request):
+    return render(request,'ledgervoucher.html')    
+
 
 
 

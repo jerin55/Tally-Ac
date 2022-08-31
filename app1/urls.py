@@ -25,7 +25,10 @@ urlpatterns = [
     path('debi',views.debi,name='debi'),
     path('ledgercreations',views.ledgercreations,name='ledgercreations'),
     path('ledgerlist',views.ledgerlist,name='ledgerlist'),
-    path('nw',views.nw,name='nw')
+    path('nw',views.nw,name='nw'),
+    path('groupsummery',views.groupsummery,name='groupsummery'),
+    path('ledgersummary',views.ledgersummary,name='ledgersummary'),
+    path('ledgervoucher',views.ledgervoucher,name='ledgervoucher')
 
 
 

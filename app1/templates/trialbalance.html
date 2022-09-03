@@ -45,60 +45,72 @@
             color:white;
             padding:10px 20px;
         }
+        .tr1:hover{
+            background:  rgb(202, 202, 13);
+        }
+        a:hover{
+            color: black;
+        }
     </style>
      <div class="row container-fluid p-0 mx-0" >
         <div class="col-sm-1 m-0  p-0"></div>
         <div class="col-sm-10 m-0 p-0" style=" width: 100%; background-color:rgba(0,0,0,0.2);" >
-
         <div>
-            <h6  class="bg-info text-light m-0 p-2">Group Summary</h6>
+            <h6  class="bg-info text-light m-0 p-2">Trial Balance</h6>
             <div class="row container-fluid p-3 m-0 back">
         
-            <div class="col-sm-2   m-0 p-0 d-flex" >
+            <div class="col-sm-2   m-0 p-0 d-flex">
              
                 <h4>Particulers</h4>
             </div>
             <div class="col-sm-8   m-0 p-0"></div>
             <div class="col-sm-2   m-0 p-0">
-                <p>Direct Expenses</p>
+                <p></p>
                 <p><b>info</b></p>
                 <h6>For 1-Apr-22</h6>
-                <p>Closing Balances</p>
+                <p>closing balance</p>
             </div>
+           
 
             </div>
 
             <div style="overflow: scroll ;max-height: 70vh; width: 100%;background-color:rgba(0,0,0,0.4); ">
                 <table class="table ">
                     <tr>
-                       
                         <th scope="col">Name</th>
                        
-                        <th scope="col" class="col-sm-2 m-0 p-0"> Credit &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                       
+                        <th  scope="col" class="col-sm-2 m-0 p-0"> Credit &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                          Debit</th>
-                       
                       
+                        
                       </tr>
                       
 
-                     {% for vouch in vouch %}
+            
                      
-                      <tr >
+                      <tr class="tr1">
+                       
+
+                        <td scope="row"><a href="">Direct Expense</a> </td>
+                       
+                        <td  class="col-sm-2 m-0 p-0"></td>
+                       
+                       
+
                         
-                        <td scope="row">{{ vouch.particular }}</td>
-                        <td class="col-sm-2 m-0 p-0">{{ vouch.credit }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ vouch.debit }}
-                       </td>
+                      </tr>
+                      <tr class="tr1">
+                        <td ><a href="">Indirect Incomes</a></td>
+                        <td></td>
+                      </tr>
+                     
+                   
+                      
+                      
                     
-
-                        
-
-                       
-                   
-                      </tr>
-                      {% endfor %}          
                      
-                   
-                     
+                      
 
                 </table>
 
@@ -106,8 +118,7 @@
             </div>
        
         </div> 
-        </div>
-     </div>
+        </div></div>
      
     
-    {% endblock %}
+{% endblock %}

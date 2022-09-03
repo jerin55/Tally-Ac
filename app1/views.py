@@ -1,5 +1,6 @@
 
 from tabnanny import check
+from tokenize import blank_re
 from unittest import TextTestRunner
 from django.shortcuts import render
 from .models import *
@@ -302,14 +303,59 @@ def nw(request):
     ledi=led.objects.all()
     return render(request,'nw.html',{'ledg':ledi})
 
-def groupsummery(request):
-    return render(request,'groupsummery.html')    
+  
 
 def ledgersummary(request):
     return render(request,'ledgersummary.html')    
 
 def ledgervoucher(request):
-    return render(request,'ledgervoucher.html')    
+    return render(request,'ledgervoucher.html')  
+
+def trialbalance(request):
+    return render(request,'trialbalance.html')    
+
+def voucheradd(request):
+    ledg=ledgercreation.objects.all()
+    return render(request,'voucheradd.html',{'ledg':ledg})    
+
+def vouchadd(request):
+    if request.method == 'POST':
+        vdate=request.POST['vdate']
+        particular=request.POST['particular']
+        account=request.POST['account']
+        vouchertype=request.POST['vouchertype']
+        voucherno=request.POST['voucherno']
+        
+        debit=request.POST['debit']
+       
+        credit=request.POST['credit']
+        
+
+        vou=vouchert(
+            vdate=vdate,
+            particular=particular,
+            account=account,
+            vouchertype=vouchertype,
+            voucherno=voucherno,
+            debit=debit,
+            credit=credit
+
+        )
+        vou.save()
+        return redirect('voucheradd')
+
+
+def groupsummery(request):
+    vouch=vouchert.objects.all()
+    return render(request,'groupsummery.html',{'vouch':vouch})          
+
+
+
+
+
+
+
+
 
 
 

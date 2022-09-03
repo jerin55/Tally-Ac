@@ -175,6 +175,20 @@ class led(models.Model):
 
 
 
+class vouchert(models.Model):
+  vdate=models.DateField()
+  particular=models.CharField(max_length=255)
+  account=models.CharField(max_length=255)
+  vouchertype=models.CharField(max_length=255)
+  voucherno=models.IntegerField()
+  debit=models.IntegerField(blank=True,default=True)
+  credit=models.IntegerField(blank=True,default=True)
+
+
+
+
+
+
        
 
 

@@ -28,7 +28,10 @@ urlpatterns = [
     path('nw',views.nw,name='nw'),
     path('groupsummery',views.groupsummery,name='groupsummery'),
     path('ledgersummary',views.ledgersummary,name='ledgersummary'),
-    path('ledgervoucher',views.ledgervoucher,name='ledgervoucher')
+    path('ledgervoucher',views.ledgervoucher,name='ledgervoucher'),
+    path('voucheradd',views.voucheradd,name='voucheradd'),
+    path('trialbalance',views.trialbalance,name='trialbalance'),
+    path('vouchadd',views.vouchadd,name='vouchadd')
 
 
 

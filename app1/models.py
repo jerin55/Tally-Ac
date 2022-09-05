@@ -185,8 +185,8 @@ class vouchert(models.Model):
   account=models.CharField(max_length=255)
   vouchertype=models.CharField(max_length=255)
   voucherno=models.IntegerField()
-  debit=models.IntegerField(blank=True,default=True)
-  credit=models.IntegerField(blank=True,default=True)
+  debit=models.IntegerField(null=True)
+  credit=models.IntegerField(null=True)
 
 
 

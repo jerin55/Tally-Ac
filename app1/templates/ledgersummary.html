@@ -45,6 +45,12 @@
             color:white;
             padding:10px 20px;
         }
+        .tr1:hover{
+            background:  rgb(202, 202, 13);
+        }
+        a:hover{
+            color: black;
+        }
     </style>
      <div class="row container-fluid p-0 mx-0" >
         <div class="col-sm-1 m-0  p-0"></div>
@@ -60,7 +66,7 @@
             </div>
             <div class="col-sm-3   m-0 p-0" ></div>
             <div class="col-sm-2   m-0 p-0">
-                <p></p>
+                <p style="padding-left: 30px;">{{ vch.particular }}</p>
                 <p style="padding-left: 30px;"><b>info</b></p>
                 <h6 style="padding-left: 30px;">For 1-Apr-22</h6>
                 <p style="padding-left: 30px;">Transactions</p>
@@ -72,8 +78,8 @@
                 <table class="table ">
                     <tr>
                        
-                        <th scope="col">Opening Balance</th>
-                       
+                        
+                       <th></th>
                        
                         <th scope="col" class="col-sm3 m-0 p-0"> Credit &nbsp
                          Debit  </th>
@@ -81,18 +87,64 @@
                        
                       
                       </tr>
+                      <tr>
+                        <th scope="col">Opening Balance</th>
+                        <th></th>
+                        <th></th>
+                      </tr>
                      
                       
-                      <tr>
+                      <tr class="tr1">
                       
                         
-                        <td scope="row"><a href="{% url 'ledgervoucher' vch.id %}">{{ vch.vdate  }}</a></td>
-                        <td class="col-sm-2 m-0 p-0">{{ vch.credit }}
+                        <td scope="row"><a href="{% url 'ledgervoucher' vch.id %}">{{ vch.vdate }}</a></td>
+                        <td class="col-sm-2 m-0 p-0">{{ vch.credit }}  &nbsp&nbsp {{ vch.debit }}
                        </td>
                        <td></td>
 
                       
                       </tr></a>
+                      <tr class="tr1">
+                        <td>October</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="tr1">
+                        <td >November</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="tr1">
+                        <td>December</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="tr1">
+                        <td>January</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="tr1">
+                        <td>February</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="tr1">
+                        <td>March</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                     
+                      <tr>
+                        <th>Grand Total</th>
+                        <td></td>
+                        <td></td>
+                      </tr>
                     
                      
                    

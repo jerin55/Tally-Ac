@@ -45,6 +45,12 @@
             color:white;
             padding:10px 20px;
         }
+        .tr1:hover{
+            background:  rgb(202, 202, 13);
+        }
+        a:hover{
+            color: black;
+        }
     </style>
      <div class="row container-fluid p-0 mx-0" >
         <div class="col-sm-1 m-0  p-0"></div>
@@ -83,7 +89,7 @@
 
                      {% for vouch in vouch %}
                      
-                      <tr >
+                      <tr  class="tr1">
                         
                         <td scope="row"><a  href="{% url 'ledgersummary' vouch.id  %}">{{ vouch.particular }}</a></td>
                         <td class="col-sm-2 m-0 p-0">{{ vouch.credit }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ vouch.debit }}

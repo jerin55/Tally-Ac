@@ -58,7 +58,7 @@
              
                 <h4>Particulers</h4>
             </div>
-            <div class="col-sm-1   m-0 p-0" ></div>
+            <div class="col-sm-3   m-0 p-0" ></div>
             <div class="col-sm-2   m-0 p-0">
                 <p></p>
                 <p style="padding-left: 30px;"><b>info</b></p>
@@ -72,7 +72,7 @@
                 <table class="table ">
                     <tr>
                        
-                        <th scope="col">Name</th>
+                        <th scope="col">Opening Balance</th>
                        
                        
                         <th scope="col" class="col-sm3 m-0 p-0"> Credit &nbsp
@@ -81,21 +81,19 @@
                        
                       
                       </tr>
-                      
-
-            
                      
-                      <tr >
+                      
+                      <tr>
+                      
                         
-                        <td scope="row"></td>
-                        <td class="col-sm-2 m-0 p-0">
+                        <td scope="row"><a href="{% url 'ledgervoucher' vch.id %}">{{ vch.vdate  }}</a></td>
+                        <td class="col-sm-2 m-0 p-0">{{ vch.credit }}
                        </td>
+                       <td></td>
 
-                        
-
-                       
-                   
-                      </tr>
+                      
+                      </tr></a>
+                    
                      
                    
                       

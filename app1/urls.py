@@ -27,11 +27,12 @@ urlpatterns = [
     path('ledgerlist',views.ledgerlist,name='ledgerlist'),
     path('nw',views.nw,name='nw'),
     path('groupsummery',views.groupsummery,name='groupsummery'),
-    path('ledgersummary',views.ledgersummary,name='ledgersummary'),
-    path('ledgervoucher',views.ledgervoucher,name='ledgervoucher'),
+    path('ledgersummary/<int:pk>',views.ledgersummary,name='ledgersummary'),
+    path('ledgervoucher/<int:pk>',views.ledgervoucher,name='ledgervoucher'),
     path('voucheradd',views.voucheradd,name='voucheradd'),
     path('trialbalance',views.trialbalance,name='trialbalance'),
-    path('vouchadd',views.vouchadd,name='vouchadd')
+    path('vouchadd',views.vouchadd,name='vouchadd'),
+    path('ex',views.ex,name='ex')
 
 
 

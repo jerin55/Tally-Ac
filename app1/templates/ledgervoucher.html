@@ -60,7 +60,7 @@
             <div class="row container-fluid p-3 m-0 back">
         
             <div class="col-sm-2   m-0 p-0 d-flex">
-                <p>Ledger :</p>
+                <p>Ledger : {{ vch.particular }}</p>
                 <h6></h6>
             </div>
             <div class="col-sm-8   m-0 p-0"></div>
@@ -89,16 +89,16 @@
                        
                       <tr  style="text-align: center;" >
 
-                          <td scope="row"></td>
+                          <td scope="row">{{ vch.vdate }}</td>
                           
-                          <td class=" dropdown " >
+                          <td class=" dropdown " >{{ vch.account }}
 
                         
                           </td>
-                          <td scope="row"></td>
-                          <td scope="row"></td>
-                          <td scope="row"></td>
-                          <td scope="row"></td>
+                          <td scope="row">{{ vch.vouchertype }}</td>
+                          <td scope="row">{{ vch.voucherno }}</td>
+                          <td scope="row">{{ vch.debit }}</td>
+                          <td scope="row">{{ vch.debit }}</td>
 
                    
                         

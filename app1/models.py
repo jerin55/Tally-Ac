@@ -144,6 +144,9 @@ class ledgercreation(models.Model):
   credit_period = models.CharField(max_length=100,null=True)
   creditdays_voucher = models.CharField(max_length=100,null=True)
 
+  def _str_(self):
+        return self.name 
+
 
 
 
@@ -177,6 +180,7 @@ class led(models.Model):
 
 class vouchert(models.Model):
   vdate=models.DateField()
+  ledger=models.ForeignKey(ledgercreation,on_delete=models.CASCADE,null=True)
   particular=models.CharField(max_length=255)
   account=models.CharField(max_length=255)
   vouchertype=models.CharField(max_length=255)

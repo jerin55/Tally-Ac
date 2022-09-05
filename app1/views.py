@@ -305,11 +305,9 @@ def nw(request):
 
   
 
-def ledgersummary(request):
-    return render(request,'ledgersummary.html')    
+  
 
-def ledgervoucher(request):
-    return render(request,'ledgervoucher.html')  
+  
 
 def trialbalance(request):
     return render(request,'trialbalance.html')    
@@ -338,7 +336,8 @@ def vouchadd(request):
             vouchertype=vouchertype,
             voucherno=voucherno,
             debit=debit,
-            credit=credit
+            credit=credit,
+            
 
         )
         vou.save()
@@ -347,7 +346,18 @@ def vouchadd(request):
 
 def groupsummery(request):
     vouch=vouchert.objects.all()
-    return render(request,'groupsummery.html',{'vouch':vouch})          
+    return render(request,'groupsummery.html',{'vouch':vouch})        
+
+def ledgersummary(request,pk):
+    vch=vouchert.objects.get(id=pk)
+    return render(request,'ledgersummary.html',{'vch':vch})    
+
+def ledgervoucher(request,pk):
+    vch=vouchert.objects.get(id=pk)
+    return render(request,'ledgervoucher.html',{'vch':vch})      
+
+def ex(request):
+    return render(request,'ex.html')      
 
 
 

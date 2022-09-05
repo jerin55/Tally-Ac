@@ -88,23 +88,15 @@
                       
 
             
-                     
+                     {% for ledg in ledg %}
                       <tr class="tr1">
                        
 
-                        <td scope="row"><a href="">Direct Expense</a> </td>
+                        <td scope="row"><a href="">{{ ledg.under }}</a> </td>
                        
-                        <td  class="col-sm-2 m-0 p-0"></td>
-                       
-                       
-
                         
                       </tr>
-                      <tr class="tr1">
-                        <td ><a href="">Indirect Incomes</a></td>
-                        <td></td>
-                      </tr>
-                     
+                     {% endfor %}
                    
                       
                       

@@ -1,4 +1,5 @@
 
+from multiprocessing import context
 from tabnanny import check
 from tokenize import blank_re
 from unittest import TextTestRunner
@@ -309,8 +310,7 @@ def nw(request):
 
   
 
-def trialbalance(request):
-    return render(request,'trialbalance.html')    
+
 
 def voucheradd(request):
     ledg=ledgercreation.objects.all()
@@ -343,21 +343,85 @@ def vouchadd(request):
         vou.save()
         return redirect('voucheradd')
 
+def trialbalance(request):
+    return render(request,'trialbalance.html')            
+
 
 def groupsummery(request):
-    vouch=vouchert.objects.all()
-    return render(request,'groupsummery.html',{'vouch':vouch})        
+    vouch=vouchert.objects.filter()
+
+    sum1=0
+    sum2=0
+    for a in vouch:
+        sum1+=a.credit
+
+    for b in vouch:
+        sum2+=b.debit    
+
+    context={'vouch':vouch,'sum1':sum1,'sum2':sum2}    
+    return render(request,'groupsummery.html',context)        
 
 def ledgersummary(request,pk):
-    vch=vouchert.objects.get(id=pk)
-    return render(request,'ledgersummary.html',{'vch':vch})    
+    vch=vouchert.objects.get(id=pk)  
+    vouch=vouchert.objects.filter(id=pk)
+
+    sum1=0
+    sum2=0
+    for a in vouch:
+        sum1+=a.credit
+
+    for b in vouch:
+        sum2+=b.debit 
+    
+    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2}      
+    return render(request,'ledgersummary.html',context)    
 
 def ledgervoucher(request,pk):
     vch=vouchert.objects.get(id=pk)
-    return render(request,'ledgervoucher.html',{'vch':vch})      
+    vouch=vouchert.objects.filter(id=pk)
+
+    sum1=0
+    sum2=0
+
+    for a in vouch:
+        sum1+=a.credit
+
+    for b in vouch:
+        sum2+=b.debit   
+    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2}     
+    return render(request,'ledgervoucher.html',context)      
 
 def ex(request):
-    return render(request,'ex.html')      
+    return render(request,'ex.html')  
+
+
+def groupsummarypage(request):
+    sdata=createcompanymodel.objects.all()
+    data=BranchGroupSummaryModel.objects.all()
+    sum1=0
+    sum2=0
+    for a in data:
+        sum1+=a.bdebit
+    for b in data:
+        sum2+=b.bcredit
+    context={'data':data,'sdata':sdata,'sum1':sum1,'sum2':sum2}
+    return render(request,'trial/bgroupsummary.html',context)   
+
+def ledger_m_summary_page(request,pk):
+    display=BranchGroupSummaryModel.objects.get(id=pk)
+    data=Bledgersummarypagemodel.objects.filter(Branchsummary_frgn=display)
+    sum1=0
+    sum2=0
+    sum3=0
+    
+    for i in data:
+        sum1+=i.bdebit
+    for i in data:
+        sum2+=i.bcredit
+    for i in data:
+        sum3+=i.bclosingbalance 
+    context={"data":data,'display':display,'sum1':sum1,'sum2':sum2,'sum3':sum3}
+    return render(request,'trial/bledgermonthlysummary.html',context)         
 
 
 

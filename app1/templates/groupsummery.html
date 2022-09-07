@@ -94,6 +94,7 @@
                         <td scope="row"><a  href="{% url 'ledgersummary' vouch.id  %}">{{ vouch.particular }}</a></td>
                         <td class="col-sm-2 m-0 p-0">{{ vouch.credit }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ vouch.debit }}
                        </td>
+                       
                     
 
                         
@@ -101,7 +102,17 @@
                        
                    
                       </tr>
-                      {% endfor %}          
+                      {% endfor %} 
+                      <tr>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Grand Total</td>
+                        <td class="col-sm-2 m-0 p-0">{{ sum1 }}  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ sum2 }}</td>
+                        
+                      </tr>
+                      
                      
                    
                      

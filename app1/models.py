@@ -182,6 +182,7 @@ class vouchert(models.Model):
   vdate=models.DateField()
   ledger=models.ForeignKey(ledgercreation,on_delete=models.CASCADE,null=True)
   particular=models.CharField(max_length=255)
+  under=models.CharField(max_length=255,null=True)
   account=models.CharField(max_length=255)
   vouchertype=models.CharField(max_length=255)
   voucherno=models.IntegerField()

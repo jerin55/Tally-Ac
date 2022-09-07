@@ -45,6 +45,12 @@
             color:white;
             padding:10px 20px;
         }
+        .tr1:hover{
+            background:  rgb(202, 202, 13);
+        }
+        a:hover{
+            color: black;
+        }
     </style>
 
 <div class="row container-fluid p-0 mx-0" >
@@ -87,7 +93,7 @@
 
                      
                        
-                      <tr  style="text-align: center;" >
+                      <tr  style="text-align: center;" class="tr1" >
 
                           <td scope="row">{{ vch.vdate }}</td>
                           
@@ -99,10 +105,30 @@
                           <td scope="row">{{ vch.voucherno }}</td>
                           <td scope="row">{{ vch.debit }}</td>
                           <td scope="row">{{ vch.credit }}</td>
+                          <td>
+
+                              
+                          </td>
 
                    
-                        
                    
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                       
+                      </tr>
+                      <tr >
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Opening Balance :<br>current Total : <br><b>Closing Balance :</b></td>
+                        <td scope="row" style="text-align: center;"><br><br><b>{{ sum2 }}</b></td>
+                        <td style="text-align: center;"><br><br><b>{{ sum1 }}</b></td>
                       </tr>
                    
                       

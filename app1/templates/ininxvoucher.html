@@ -63,12 +63,12 @@
     <h6  class="bg-info text-light  p-2">Voucher Add</h6>
     
 
-<form id="myForm" action="{% url 'vouchadd' %}" method="post" class="">
+<form id="myForm" action="{% url 'ininxvouchadd' %}" method="post" class="">
     {% csrf_token %}
    
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4  p-0"> <label for="gname">Date :</label></div>
-                        <div class="col-sm-8  p-0"><input type="date" id="date"   name="vdate" class="form-control" placeholder="" required></div> 
+                        <div class="col-sm-8  p-0"><input type="date" id="date"   name="ivdate" class="form-control" placeholder="" required></div> 
                     </div>
 
                     
@@ -80,7 +80,7 @@
                         <div class="col-sm-4 p-0"> <label for="Under">particular</label></div>
                         <div class="col-sm-8  p-0"> 
 
-                            <select name="particular" class="form-control">
+                            <select name="iparticular" class="form-control">
                                 {% for ledg in ledg %}
                                 <option >{{ ledg.name }}</option>
                                
@@ -93,8 +93,8 @@
                     <div class="row container-fluid p-2 m-0">
                         <div class="col-sm-4 p-0"><label>Under</label></div>
                         <div class="col-sm-8 p-0">
-                            <select class="form-control">
-                                <option>Direct Expense </option>
+                            <select class="form-control" name="iunder">
+                                <option>Indirect Incomes</option>
                                
 
                             </select>
@@ -112,7 +112,7 @@
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="subled">Accounts:</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                            <select id="subled" name="account" class=" form-control">
+                            <select id="subled" name="iaccount" class=" form-control">
                                 <option >Purchase Return</option>
                                 
                             </select>
@@ -125,7 +125,7 @@
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="nett">Voucher Type:</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                            <select id="nett" name="vouchertype" class=" form-control">
+                            <select id="nett" name="ivouchertype" class=" form-control">
                                 <option value="Abr"></option>
                                 <option value="Attendance">Attendance</option>  
                                 <option value="Contra">Contra</option> 
@@ -159,7 +159,7 @@
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="nett">Voucher no:</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                           <input type="number" name="voucherno" class="form-control">
+                           <input type="number" name="ivoucherno" class="form-control">
                         </div> 
                     </div>
 
@@ -168,14 +168,14 @@
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="meth">Debit:</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                           <input type="number" name="debit" class="form-control">
+                           <input type="number" name="idebit" class="form-control">
                         </div> 
                     </div>
                     
                     <div class="row container-fluid  p-2 m-0">
                         <div class="col-sm-4 m-0 p-0"> <label for="meth">Credit:</label></div>
                         <div class="col-sm-8 m-0 p-0">
-                           <input type="number" name="credit" class="form-control">
+                           <input type="number" name="icredit" class="form-control">
                         </div> 
                     </div>
 

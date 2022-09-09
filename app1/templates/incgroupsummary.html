@@ -55,71 +55,67 @@
      <div class="row container-fluid p-0 mx-0" >
         <div class="col-sm-1 m-0  p-0"></div>
         <div class="col-sm-10 m-0 p-0" style=" width: 100%; background-color:rgba(0,0,0,0.2);" >
+
         <div>
-            <h6  class="bg-info text-light m-0 p-2">Trial Balance</h6>
+            <h6  class="bg-info text-light m-0 p-2">Group Summary</h6>
             <div class="row container-fluid p-3 m-0 back">
         
-            <div class="col-sm-2   m-0 p-0 d-flex">
+            <div class="col-sm-2   m-0 p-0 d-flex" >
              
                 <h4>Particulers</h4>
             </div>
             <div class="col-sm-8   m-0 p-0"></div>
-            <div class="col-sm-2   m-0 p-0" style="text-align: center;">
-                <p></p>
+            <div class="col-sm-2   m-0 p-0"style="text-align: center;">
+                <p>Direct Expenses</p>
                 <p><b>info</b></p>
                 <h6>For 1-Apr-22</h6>
-                <p>closing balance</p>
+                <p>Closing Balances</p>
             </div>
-           
 
             </div>
 
             <div style="overflow: scroll ;max-height: 70vh; width: 100%;background-color:rgba(0,0,0,0.4); ">
                 <table class="table ">
-                    <tr >
-                        <th scope="col"></th>
+                    <tr>
                        
+                        <th scope="col"><a >Name</a></th>
                        
-                        <th   scope="col" class="col-sm-2 m-0 p-0" style="text-align: center;"> Credit &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <th scope="col" class="col-sm-2 m-0 p-0" style="text-align: center;"> Credit &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                          Debit</th>
+                       
                       
-                        
                       </tr>
                       
 
-            
+                     {% for vouch in vouch %}
                      
-                      <tr class="tr1">
-                       
-
-                        <td scope="row"><a href="groupsummery">Diret Expense </a> </td>
-                       
-                        <td scope="row"  class="col-sm-2 m-0 p-0" style="text-align: center;"> {{ sum1 }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ sum2 }}</td>
-                       
-                       
-                       
+                      <tr  class="tr1">
                         
-                      </tr>
-                      <tr class="tr1">
+                        <td scope="row"><a  href="{% url 'incledgersummary' vouch.id  %}">{{ vouch.iparticular }}</a></td>
+                        <td class="col-sm-2 m-0 p-0" style="text-align: center;">{{ vouch.icredit }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ vouch.idebit }}
+                       </td>
                        
+                    
 
-                        <td scope="row"><a href="incgroupsummary">Indirect Incomes </a> </td>
-                        <td scope="row"  class="col-sm-2 m-0 p-0" style="text-align: center;"> {{ sum3 }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ sum4 }}</td>
-                       
                         
+
+                       
+                   
                       </tr>
-                      <tr class="tr1">
-                        <td><a href="">Indirect Expense</a></td>
+                      {% endfor %} 
+                      <tr>
+                        <td></td>
                         <td></td>
                       </tr>
-                    
-                    
-                   
+                      <tr>
+                        <td>Grand Total</td>
+                        <td class="col-sm-2 m-0 p-0" style="text-align: center;">{{ sum1 }}  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ sum2 }}</td>
+                        
+                      </tr>
                       
-                      
-                    
                      
-                      
+                   
+                     
 
                 </table>
 
@@ -127,7 +123,8 @@
             </div>
        
         </div> 
-        </div></div>
+        </div>
+     </div>
      
     
-{% endblock %}
+    {% endblock %}

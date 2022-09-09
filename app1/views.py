@@ -343,8 +343,7 @@ def vouchadd(request):
         vou.save()
         return redirect('voucheradd')
 
-def trialbalance(request):
-    return render(request,'trialbalance.html')            
+       
 
 
 def groupsummery(request):
@@ -395,33 +394,154 @@ def ex(request):
     return render(request,'ex.html')  
 
 
-def groupsummarypage(request):
-    sdata=createcompanymodel.objects.all()
-    data=BranchGroupSummaryModel.objects.all()
-    sum1=0
-    sum2=0
-    for a in data:
-        sum1+=a.bdebit
-    for b in data:
-        sum2+=b.bcredit
-    context={'data':data,'sdata':sdata,'sum1':sum1,'sum2':sum2}
-    return render(request,'trial/bgroupsummary.html',context)   
 
-def ledger_m_summary_page(request,pk):
-    display=BranchGroupSummaryModel.objects.get(id=pk)
-    data=Bledgersummarypagemodel.objects.filter(Branchsummary_frgn=display)
+
+
+
+def inincvoucher(request):
+    ledg=ledgercreation.objects.all()
+    return render(request,'inincvoucher.html',{'ledg':ledg})    
+
+def inincvouchadd(request):
+    if request.method == 'POST':
+        ivdate=request.POST['ivdate']
+        iparticular=request.POST['iparticular']
+        iaccount=request.POST['iaccount']
+        ivouchertype=request.POST['ivouchertype']
+        ivoucherno=request.POST['ivoucherno']
+        
+        idebit=request.POST['idebit']
+       
+        icredit=request.POST['icredit']
+        
+
+        voui=inincvouchert(
+            ivdate=ivdate,
+            iparticular=iparticular,
+            iaccount=iaccount,
+            ivouchertype=ivouchertype,
+            ivoucherno=ivoucherno,
+            idebit=idebit,
+            icredit=icredit,
+            
+
+        )
+        voui.save()
+        return redirect('inincvoucher')
+
+def incgroupsummary(request): 
+    vouch=inincvouchert.objects.filter()
+
     sum1=0
     sum2=0
+    for a in vouch:
+        sum1+=a.icredit
+        
+    for b in vouch:
+        sum2+=b.idebit
+
+    context={'vouch':vouch,'sum1':sum1,'sum2':sum2}    
+    return render(request,'incgroupsummary.html',context)
+
+def incledgersummary(request,pk):
+    vch=inincvouchert.objects.get(id=pk)
+    vouch=inincvouchert.objects.filter(id=pk)
+
+    sum1=0
+    sum2=0
+
+    for a in vouch:
+        sum1+=a.icredit
+
+    for b in vouch:
+        sum2+=b.idebit    
+        
+    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2}   
+    return render(request,'incledgersummary.html',context) 
+
+
+def incledgervoucher(request,pk):
+    vch=inincvouchert.objects.get(id=pk)
+    vouch=inincvouchert.objects.filter(id=pk)
+
+    sum1=0
+    sum2=0
+
+    for a in vouch:
+        sum1+=a.idebit
+
+    for b in vouch:
+        sum2+=b.icredit 
+
+    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2}     
+    return render(request,'incledgervoucher.html',context)    
+
+
+
+
+
+
+def ininxvoucher(request):
+    ledg=ledgercreation.objects.all()
+    return render(request,'ininxvoucher.html',{'ledg':ledg})    
+
+def ininxvouchadd(request):
+    if request.method == 'POST':
+        ivdate=request.POST['ivdate']
+        iparticular=request.POST['iparticular']
+        iaccount=request.POST['iaccount']
+        ivouchertype=request.POST['ivouchertype']
+        ivoucherno=request.POST['ivoucherno']
+        
+        idebit=request.POST['idebit']
+       
+        icredit=request.POST['icredit']
+        
+
+        voui=ininxvouchert(
+            ivdate=ivdate,
+            iparticular=iparticular,
+            iaccount=iaccount,
+            ivouchertype=ivouchertype,
+            ivoucherno=ivoucherno,
+            idebit=idebit,
+            icredit=icredit,
+            
+
+        )
+        voui.save()
+        return redirect('ininxvoucher')     
+
+
+
+def trialbalance(request):
+    total=vouchert.objects.all()
+
+    sum1=0
+    sum2=0
+    for a in total:
+        sum1+=a.credit
+
+    for b in total:
+        sum2+=b.debit    
+
+    totinc=inincvouchert.objects.all()
+
+
     sum3=0
-    
-    for i in data:
-        sum1+=i.bdebit
-    for i in data:
-        sum2+=i.bcredit
-    for i in data:
-        sum3+=i.bclosingbalance 
-    context={"data":data,'display':display,'sum1':sum1,'sum2':sum2,'sum3':sum3}
-    return render(request,'trial/bledgermonthlysummary.html',context)         
+    sum4=0
+
+    for a in totinc:
+        sum3+=a.icredit
+
+    for b in totinc:
+        sum4+=b.idebit
+
+    context={'total':total,'totinc':totinc,'sum1':sum1,'sum2':sum2,'sum3':sum3,'sum4':sum4}
+    return render(request,'trialbalance.html',context)                
+
+
+
 
 
 

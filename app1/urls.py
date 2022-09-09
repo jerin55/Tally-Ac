@@ -32,7 +32,16 @@ urlpatterns = [
     path('voucheradd',views.voucheradd,name='voucheradd'),
     path('trialbalance',views.trialbalance,name='trialbalance'),
     path('vouchadd',views.vouchadd,name='vouchadd'),
-    path('ex',views.ex,name='ex')
+    path('ex',views.ex,name='ex'),
+    path('inincvoucher',views.inincvoucher,name='inincvoucher'),
+    path('inincvouchadd',views.inincvouchadd,name='inincvouchadd'),
+    path('ininxvoucher',views.ininxvoucher,name='ininxvoucher'),
+    path('ininxvouchadd',views.ininxvouchadd,name='ininxvouchadd'),
+    path('incgroupsummary',views.incgroupsummary,name='incgroupsummary'),
+    path('incledgersummary/<int:pk>',views.incledgersummary,name='incledgersummary'),
+    path('incledgervoucher/<int:pk>',views.incledgervoucher,name='incledgervoucher')
+
+
 
 
 

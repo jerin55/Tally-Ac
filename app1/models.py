@@ -190,6 +190,32 @@ class vouchert(models.Model):
   credit=models.IntegerField(null=True)
 
 
+class inincvouchert(models.Model):
+  ivdate=models.DateField()
+  iledger=models.ForeignKey(ledgercreation,on_delete=models.CASCADE,null=True)
+  iparticular=models.CharField(max_length=255)
+  iunder=models.CharField(max_length=255,null=True)
+  iaccount=models.CharField(max_length=255)
+  ivouchertype=models.CharField(max_length=255)
+  ivoucherno=models.IntegerField()
+  idebit=models.IntegerField(null=True)
+  icredit=models.IntegerField(null=True)
+
+
+class ininxvouchert(models.Model):
+  ivdate=models.DateField()
+  iledger=models.ForeignKey(ledgercreation,on_delete=models.CASCADE,null=True)
+  iparticular=models.CharField(max_length=255)
+  iunder=models.CharField(max_length=255,null=True)
+  iaccount=models.CharField(max_length=255)
+  ivouchertype=models.CharField(max_length=255)
+  ivoucherno=models.IntegerField()
+  idebit=models.IntegerField(null=True)
+  icredit=models.IntegerField(null=True)
+
+
+
+
 
 
 

@@ -513,6 +513,58 @@ def ininxvouchadd(request):
         return redirect('ininxvoucher')     
 
 
+def inxgroupsummary(request):
+    vouch=ininxvouchert.objects.all()
+    sum1=0
+    sum2=0
+    for a in vouch:
+        sum1+=a.icredit
+
+    for b in vouch:
+        sum2+=b.idebit
+
+    context={'vouch':vouch,'sum1':sum1,'sum2':sum2}        
+
+    return render(request,'inxgroupsummary.html',context)  
+
+
+def inxledgersummary(request,pk):
+    vch=ininxvouchert.objects.get(id=pk)
+    vouch=ininxvouchert.objects.filter(id=pk)
+
+    sum1=0
+    sum2=0
+
+    for a in vouch:
+        sum1+=a.icredit
+
+    for b in vouch:
+        sum2+=b.idebit
+
+    
+
+
+    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2}
+    return render(request,'inxledgersummary.html',context)
+
+def inxledgervoucher(request,pk):
+    vch=ininxvouchert.objects.get(id=pk)
+    vouch=ininxvouchert.objects.filter(id=pk)
+
+    sum1=0
+    sum2=0
+    for a in vouch:
+        sum1+=a.icredit
+
+    for b in vouch:
+        sum2+=b.idebit    
+
+    context={'vch':vch,'sum1':sum1,'sum2':sum2}
+    return render(request,'inxledgervoucher.html',context)
+
+
+
+
 
 def trialbalance(request):
     total=vouchert.objects.all()
@@ -537,7 +589,21 @@ def trialbalance(request):
     for b in totinc:
         sum4+=b.idebit
 
-    context={'total':total,'totinc':totinc,'sum1':sum1,'sum2':sum2,'sum3':sum3,'sum4':sum4}
+    totinx=ininxvouchert.objects.all() 
+
+    sum6=0
+    sum7=0
+
+    for a in totinx:
+        sum6+=a.icredit
+
+    for b in totinx:
+        sum7+=b.idebit   
+
+        
+
+
+    context={'total':total,'totinc':totinc,'sum1':sum1,'sum2':sum2,'sum3':sum3,'sum4':sum4,'sum6':sum6,'sum7':sum7,'totinx':totinx}
     return render(request,'trialbalance.html',context)                
 
 

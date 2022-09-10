@@ -39,7 +39,10 @@ urlpatterns = [
     path('ininxvouchadd',views.ininxvouchadd,name='ininxvouchadd'),
     path('incgroupsummary',views.incgroupsummary,name='incgroupsummary'),
     path('incledgersummary/<int:pk>',views.incledgersummary,name='incledgersummary'),
-    path('incledgervoucher/<int:pk>',views.incledgervoucher,name='incledgervoucher')
+    path('incledgervoucher/<int:pk>',views.incledgervoucher,name='incledgervoucher'),
+    path('inxgroupsummary',views.inxgroupsummary,name='inxgroupsummary'),
+    path('inxledgersummary/<int:pk>',views.inxledgersummary,name='inxledgersummary'),
+    path('inxledgervoucher/<int:pk>',views.inxledgervoucher,name='inxledgervoucher')
 
 
 

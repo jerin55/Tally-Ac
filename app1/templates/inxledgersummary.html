@@ -97,40 +97,40 @@
                       <tr class="tr1">
                       
                         
-                        <td scope="row"><a href="{% url 'inxledgervoucher' vch.id  %}">{{ vch.ivdate }}</a></td>
+                        <td scope="row"><a href="{% url 'inxledgervoucher' vch.id  %}">April</a></td>
                         <td class="col-sm-2 m-0 p-0" style="text-align: center;">{{ vch.icredit }}  &nbsp&nbsp {{ vch.idebit }}
                        </td>
-                       <td></td>
+                       <td>{{ clsum  }}</td>
 
                       
                       </tr></a>
                       <tr class="tr1">
+                        <td>May</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="tr1">
+                        <td >June</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="tr1">
+                        <td>July</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="tr1">
+                        <td>August</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="tr1">
+                        <td>September</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="tr1">
                         <td>October</td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr class="tr1">
-                        <td >November</td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr class="tr1">
-                        <td>December</td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr class="tr1">
-                        <td>January</td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr class="tr1">
-                        <td>February</td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr class="tr1">
-                        <td>March</td>
                         <td></td>
                         <td></td>
                       </tr>
@@ -143,7 +143,7 @@
                       <tr>
                         <th>Grand Total</th>
                         <td style="text-align: center;"><b>{{ sum1 }} &nbsp&nbsp {{ sum2 }}</b></td>
-                        <td></td>
+                        <td>{{ clsum }} </td>
                         
                       </tr>
                     

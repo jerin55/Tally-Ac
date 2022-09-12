@@ -52,6 +52,15 @@
         a:hover{
             color: black;
         }
+        th:hover{
+          color: black;
+        }
+        .hu:hover{
+          color: white;
+        }
+        td:hover{
+          color: black;
+        }
     </style>
      <div class="row container-fluid p-0 mx-0" >
         <div class="col-sm-1 m-0  p-0"></div>
@@ -64,12 +73,14 @@
              
                 <h4>Particulers</h4>
             </div>
-            <div class="col-sm-8   m-0 p-0"></div>
+            <div class="col-sm-6   m-0 p-0"></div>
             <div class="col-sm-2   m-0 p-0" style="text-align: center;">
                 <p></p>
                 <p><b>info</b></p>
                 <h6>For 1-Apr-22</h6>
                 <p>closing balance</p>
+                <td style="text-align: center; padding-left: 1;">Credit &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  Debit</td>
             </div>
            
 
@@ -77,34 +88,26 @@
 
             <div style="overflow: scroll ;max-height: 70vh; width: 100%;background-color:rgba(0,0,0,0.4); ">
                 <table class="table ">
-                    <tr >
-                        <th scope="col"></th>
-                       
-                       
-                        <th   scope="col" class="col-sm-2 m-0 p-0" style="text-align: center;"> Credit &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                         Debit</th>
-                      
-                        
-                      </tr>
+                   
                       <tr>
                         <td></td>
                         <td></td>
                         
                       </tr>
 
-                      <tr class="tr1">
-                        <td>Capital Accounts </td>
-                        <td></td>
+                      <tr class="tr1" >
+                        <th  class="col-sm-2 m-0 p-1">Capital Accounts </th>
+                        <th class="col-sm-2 m-0 p-0" style="text-align: center;">{{ cpsum1 }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ cpsum1 }}</th>
                         
                       </tr>
                       <tr class="tr1">
-                        <td>Loans</td>
-                        <td></td>
+                        <th class="col-sm-2 m-0 p-1">Loans</th>
+                        <th  class="col-sm-2 m-0 p-0" style="text-align: center;">{{ loan }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ loan2 }}</th>
                         
                       </tr>
                       <tr class="tr1">
-                        <td>current Liabilities</td>
-                        <td></td>
+                        <th class="col-sm-2 m-0 p-1">current Liabilities</th>
+                        <th class="col-sm-2 m-0 p-0" style="text-align: center;">{{ crl }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ crl2 }}</th>
                         
                       </tr>
                       <tr>
@@ -113,23 +116,23 @@
                         
                       </tr>
                       <tr class="tr1">
-                        <td>Fixed Assets</td>
-                        <td></td>
+                        <th class="col-sm-2 m-0 p-1">Fixed Assets</th>
+                        <th class="col-sm-2 m-0 p-0" class="col-sm-2 m-0 p-0" style="text-align: center;">{{ fxa }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ fxa2 }}</th>
                         
                       </tr>
                       <tr class="tr1">
-                        <td>Investiments</td>
-                        <td></td>
+                        <th class="col-sm-2 m-0 p-1">Investiments</th>
+                        <th class="col-sm-2 m-0 p-0" style="text-align: center;">{{ invst }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ invst2 }}</th>
                         
                       </tr>
                       <tr class="tr1">
-                        <td>Current Assets</td>
-                        <td></td>
+                        <th class="col-sm-2 m-0 p-1">Current Assets</th>
+                        <th class="col-sm-2 m-0 p-0" style="text-align: center;">{{ cuas }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ cuas2 }}</th>
                         
                       </tr>
                       <tr class="tr1">
-                        <td>Branch Division</td>
-                        <td></td>
+                        <th class="col-sm-2 m-0 p-1">Branch Division</th>
+                        <th class="col-sm-2 m-0 p-0" style="text-align: center;">{{ brdv }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ brdv2 }}</th>
                         
                       </tr>
                       <tr>
@@ -138,13 +141,13 @@
                         
                       </tr>
                       <tr class="tr1">
-                        <td>Sales Accounts</td>
-                        <td></td>
+                        <th class="col-sm-2 m-0 p-1">Sales Accounts</th>
+                        <th class="col-sm-2 m-0 p-0" style="text-align: center;">{{ sala }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ sala2 }}</th>
                         
                       </tr>
                       <tr class="tr1">
-                        <td>Purchase Accounts</td>
-                        <td></td>
+                        <th class="col-sm-2 m-0 p-1">Purchase Accounts</th>
+                        <th class="col-sm-2 m-0 p-0" style="text-align: center;">{{ pur }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ pur2 }}</th>
                         
                       </tr>
                       <tr >
@@ -153,8 +156,8 @@
                         
                       </tr>
                       <tr class="tr1">
-                        <td>Direct Incomes</td>
-                        <td></td>
+                        <th class="col-sm-2 m-0 p-1">Direct Incomes</th>
+                        <th class="col-sm-2 m-0 p-0" style="text-align: center;">{{ dirin }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ dirin2 }}</th>
                         
                       </tr>
                       
@@ -164,9 +167,9 @@
                       <tr class="tr1">
                        
 
-                        <td scope="row"><a href="groupsummery">Diret Expense </a> </td>
+                        <th scope="row" class="col-sm-2 m-0 p-1"><a href="groupsummery">Diret Expense </a> </th>
                        
-                        <td scope="row"  class="col-sm-2 m-0 p-0" style="text-align: center;"> {{ sum1 }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ sum2 }}</td>
+                        <th scope="row"  class="col-sm-2 m-0 p-0" style="text-align: center;"> {{ sum1 }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ sum2 }}</th>
                        
                        
                        
@@ -175,20 +178,41 @@
                       <tr class="tr1">
                        
 
-                        <td scope="row"><a href="incgroupsummary">Indirect Incomes </a> </td>
-                        <td scope="row"  class="col-sm-2 m-0 p-0" style="text-align: center;"> {{ sum3 }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ sum4 }}</td>
+                        <th scope="row" class="col-sm-2 m-0 p-1"><a href="incgroupsummary">Indirect Incomes </a> </th>
+                        <th scope="row"  class="col-sm-2 m-0 p-0" style="text-align: center;"> {{ sum3 }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ sum4 }}</th>
                        
                         
                       </tr>
                       <tr class="tr1">
-                        <td><a href="inxgroupsummary">Indirect Expense</a></td>
-                        <td class="col-sm-2 m-0 p-0" style="text-align: center;">{{ summ }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ sum7 }}</td>
+                        <th class="col-sm-2 m-0 p-1"><a href="inxgroupsummary">Indirect Expense</a></th>
+                        <th class="col-sm-2 m-0 p-0" style="text-align: center;">{{ sum6 }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ sum7 }}</th>
                       </tr>
 
-                      <tr >
-                        <td></td>
-                        <td></td>
+                      <tr  class="tr1">
+                        <td class="col-sm-2 m-0 p-1" >Difference In Opening Balance</td>
+                        {% if crtot < drtot %} 
+                        <td class="col-sm-2 m-0 p-0" style="text-align: center;">{{ diff }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </td>
+                        {% else %}
+                        <td class="col-sm-2 m-0 p-0" style="text-align: center;"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ diff }}</td>
+                        {% endif %}
                         
+                        
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th class="hu">Grand Total</th>
+                        {% if crtot > drtot %}
+                        <th class="col-sm-2 m-0 p-0 hu" style="text-align: center;">{{ crtot  }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ crtot  }}</th>
+                        {% else %}
+                        <th class="col-sm-2 m-0 p-0 hu" style="text-align: center;">{{ drtot  }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ drtot  }}</th>
+                        {% endif %}
                       </tr>
                     
                     

@@ -394,8 +394,11 @@
                             <option class="huh"  onclick="hideList('Unsecured Loans'),sh10()">Unsecured Loans</option> 
                             
                             {% for grp in grp %}
+                            
             
                             <div class="huh" onclick="hideList('{{ grp.group_name }}'),sh10()" style="color: black;" >{{ grp.group_name }}</div>
+                            
+
                             {% endfor %}
 
                         </section>

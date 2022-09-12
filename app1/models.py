@@ -186,6 +186,7 @@ class vouchert(models.Model):
   account=models.CharField(max_length=255)
   vouchertype=models.CharField(max_length=255)
   voucherno=models.IntegerField()
+  openingbal=models.IntegerField(null=True)
   debit=models.IntegerField(null=True)
   credit=models.IntegerField(null=True)
 
@@ -198,6 +199,7 @@ class inincvouchert(models.Model):
   iaccount=models.CharField(max_length=255)
   ivouchertype=models.CharField(max_length=255)
   ivoucherno=models.IntegerField()
+  iopeningbal=models.IntegerField(null=True)
   idebit=models.IntegerField(null=True)
   icredit=models.IntegerField(null=True)
 
@@ -210,6 +212,7 @@ class ininxvouchert(models.Model):
   iaccount=models.CharField(max_length=255)
   ivouchertype=models.CharField(max_length=255)
   ivoucherno=models.IntegerField()
+  iopeningbal=models.IntegerField(null=True)
   idebit=models.IntegerField(null=True)
   icredit=models.IntegerField(null=True)
 

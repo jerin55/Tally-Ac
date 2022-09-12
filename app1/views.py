@@ -323,6 +323,8 @@ def vouchadd(request):
         account=request.POST['account']
         vouchertype=request.POST['vouchertype']
         voucherno=request.POST['voucherno']
+        openingbal=request.POST['openingbal']
+        
         
         debit=request.POST['debit']
        
@@ -337,6 +339,7 @@ def vouchadd(request):
             voucherno=voucherno,
             debit=debit,
             credit=credit,
+            openingbal=openingbal
             
 
         )
@@ -347,6 +350,8 @@ def vouchadd(request):
 
 
 def groupsummery(request):
+
+   
     vouch=vouchert.objects.filter()
 
     sum1=0
@@ -366,13 +371,23 @@ def ledgersummary(request,pk):
 
     sum1=0
     sum2=0
+    sum3=0
     for a in vouch:
         sum1+=a.credit
 
     for b in vouch:
         sum2+=b.debit 
+
     
-    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2}      
+
+    for c in vouch:
+        sum3+=c.openingbal   
+
+    tot=sum1+sum2 
+    cltot=tot-sum3  
+      
+    
+    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2,'sum3':sum3,'sum3':sum3,'tot':tot,'cltot':cltot}      
     return render(request,'ledgersummary.html',context)    
 
 def ledgervoucher(request,pk):
@@ -381,13 +396,22 @@ def ledgervoucher(request,pk):
 
     sum1=0
     sum2=0
+    sum3=0
 
     for a in vouch:
         sum1+=a.credit
 
     for b in vouch:
-        sum2+=b.debit   
-    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2}     
+        sum2+=b.debit  
+
+    for c in vouch:
+        sum3+=c.openingbal   
+
+    tot=sum1+sum2 
+    cltot=tot-sum3  
+
+        
+    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2,'sum3':sum3,'tot':tot,'cltot':cltot}     
     return render(request,'ledgervoucher.html',context)      
 
 def ex(request):
@@ -454,9 +478,11 @@ def incledgersummary(request,pk):
         sum1+=a.icredit
 
     for b in vouch:
-        sum2+=b.idebit    
+        sum2+=b.idebit 
+
+    clsum=sum1+sum2       
         
-    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2}   
+    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2,'clsum':clsum}   
     return render(request,'incledgersummary.html',context) 
 
 
@@ -541,10 +567,10 @@ def inxledgersummary(request,pk):
     for b in vouch:
         sum2+=b.idebit
 
-    
+    clsum=sum1+sum2
 
 
-    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2}
+    context={'vch':vch,'vouch':vouch,'sum1':sum1,'sum2':sum2,'clsum':clsum}
     return render(request,'inxledgersummary.html',context)
 
 def inxledgervoucher(request,pk):
@@ -600,10 +626,39 @@ def trialbalance(request):
     for b in totinx:
         sum7+=b.idebit   
 
-        
+    cpsum1=22000 
+    cpsum2=45000
+    loan=50000
+    loan2=60000
+    crl=75000
+    crl2=65000
+    fxa=55000
+    fxa2=40000
+    invst=80000
+    invst2=30000
+    cuas=50000
+    cuas2=40000
+    brdv=45000
+    brdv2=25000
+    sala=35000
+    sala2=20000
+    pur=45000
+    pur2=80000
+    dirin=65000
+    dirin2=35000
+
+    crtot=sum1+sum3+cpsum1+loan+crl+fxa+invst+cuas+brdv+sala+pur+dirin+sum6
+    drtot=sum2+sum4+sum7+cpsum2+loan2+crl2+fxa2+invst2+cuas2+brdv2+sala2+pur2+dirin2
+    diff=crtot-drtot
+
+    
 
 
-    context={'total':total,'totinc':totinc,'sum1':sum1,'sum2':sum2,'sum3':sum3,'sum4':sum4,'sum6':sum6,'sum7':sum7,'totinx':totinx}
+
+    context={'total':total,'totinc':totinc,'sum1':sum1,'sum2':sum2,'sum3':sum3,'sum4':sum4,'sum6':sum6,'sum7':sum7,'totinx':totinx,
+    'cpsum1':cpsum1,'cpsum2':cpsum2,'loan':loan,'loan2':loan2,'crl':crl,'crl2':crl2,'fxa':fxa,'fxa2':fxa2,
+    'invst':invst,'invst2':invst2,'brdv':brdv,'sala':sala,'sala2':sala2,'pur':pur,'pur2':pur2,'dirin':dirin,
+    'dirin2':dirin2,'brdv2':brdv2,'cuas':cuas,'cuas2':cuas2,'crtot':crtot,'drtot':drtot,'diff':diff}
     return render(request,'trialbalance.html',context)                
 
 

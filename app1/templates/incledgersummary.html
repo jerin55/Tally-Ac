@@ -97,30 +97,30 @@
                       <tr class="tr1">
                       
                         
-                        <td scope="row"><a href="{% url 'incledgervoucher' vch.id  %}">{{ vch.ivdate }}</a></td>
+                        <td scope="row"><a href="{% url 'incledgervoucher' vch.id  %}">April</a></td>
                         <td class="col-sm-2 m-0 p-0" style="text-align: center;">{{ vch.icredit }}  &nbsp&nbsp {{ vch.idebit }}
                        </td>
-                       <td></td>
+                       <td>{{ clsum }}</td>
 
                       
                       </tr></a>
                       <tr class="tr1">
-                        <td>October</td>
+                        <td>May</td>
                         <td></td>
                         <td></td>
                       </tr>
                       <tr class="tr1">
-                        <td >November</td>
+                        <td >June</td>
                         <td></td>
                         <td></td>
                       </tr>
                       <tr class="tr1">
-                        <td>December</td>
+                        <td>July</td>
                         <td></td>
                         <td></td>
                       </tr>
                       <tr class="tr1">
-                        <td>January</td>
+                        <td>August</td>
                         <td></td>
                         <td></td>
                       </tr>
@@ -130,7 +130,7 @@
                         <td></td>
                       </tr>
                       <tr class="tr1">
-                        <td>March</td>
+                        <td>September</td>
                         <td></td>
                         <td></td>
                       </tr>
@@ -143,6 +143,7 @@
                       <tr>
                         <th>Grand Total</th>
                         <td style="text-align: center;">{{ sum1 }} &nbsp&nbsp {{ sum2 }}</td>
+                        <td>{{ clsum }}</td>
                         
                       </tr>
                     
